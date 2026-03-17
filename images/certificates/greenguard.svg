@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" fill="#DFEFC7" rx="8"/>
+  <circle cx="60" cy="42" r="18" fill="#92C83E"/>
+  <path d="M55 42 L58 45 L66 37" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="78" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#92C83E" text-anchor="middle">GREENGUARD</text>
+  <text x="60" y="92" font-family="Arial, sans-serif" font-size="8" fill="#5a7a2e" text-anchor="middle">Certified</text>
+</svg>

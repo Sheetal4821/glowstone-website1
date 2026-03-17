@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" fill="#fff" rx="8"/>
+  <path d="M45 35 L48 45 L58 45 L50 52 L53 62 L45 56 L37 62 L40 52 L32 45 L42 45 Z" fill="#ff9933"/>
+  <path d="M75 35 L78 45 L88 45 L80 52 L83 62 L75 56 L67 62 L70 52 L62 45 L72 45 Z" fill="#ff9933"/>
+  <text x="60" y="88" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#000080" text-anchor="middle">TWO STAR</text>
+  <text x="60" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#000080" text-anchor="middle">EXPORT HOUSE</text>
+  <text x="60" y="112" font-family="Arial, sans-serif" font-size="7" fill="#333" text-anchor="middle">Govt. of India</text>
+</svg>

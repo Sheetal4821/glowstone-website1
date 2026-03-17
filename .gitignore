@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE / Editor
+.cursor/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Thumbnails
+._*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Large video files (exceeds GitHub 100MB limit - host separately)
+video/

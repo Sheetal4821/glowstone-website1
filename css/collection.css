@@ -1,0 +1,645 @@
+/**
+ * Glowstone - Collection, Series & Product Pages
+ * Eternal Surfaces style layout
+ */
+
+.collection-section,
+.collection-series-section,
+.collection-product-section {
+    scroll-margin-top: 80px;
+}
+
+/* ===== Collections Grid (Series Cards) ===== */
+.collection-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.collection-hero .section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--navbar-accent);
+    margin-bottom: 1rem;
+}
+
+.collection-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.collection-hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(232, 228, 223, 0.8);
+}
+
+/* Series Cards Grid */
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0 4rem;
+}
+
+.series-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: #1a1a1a;
+}
+
+.series-card-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.series-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Ensure product/series card images are responsive */
+.product-card-image,
+.series-card-image {
+    max-width: 100%;
+}
+
+.series-card:hover .series-card-image {
+    transform: scale(1.05);
+}
+
+.series-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.series-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 0.5rem;
+}
+
+.series-card-cta {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--navbar-accent);
+    margin-top: 0.5rem;
+}
+
+.series-card-cta::after {
+    content: ' →';
+}
+
+/* Placeholder for series without image */
+.series-card-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.series-card-placeholder span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: rgba(201, 169, 98, 0.5);
+}
+
+/* ===== Series Page (Products Grid) ===== */
+.series-page-header {
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.series-page-header .section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--navbar-accent);
+    margin-bottom: 0.5rem;
+}
+
+.series-page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #fff;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0 4rem;
+}
+
+.product-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201, 169, 98, 0.15);
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.product-card:hover {
+    border-color: rgba(201, 169, 98, 0.4);
+    transform: translateY(-4px);
+}
+
+.product-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.product-card-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card-placeholder span {
+    font-size: 0.9rem;
+    color: rgba(232, 228, 223, 0.4);
+}
+
+.product-card-info {
+    padding: 1.25rem;
+}
+
+.product-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin: 0;
+}
+
+.product-card-cta {
+    font-size: 0.85rem;
+    color: var(--navbar-accent);
+    margin-top: 0.5rem;
+}
+
+/* Series intro content */
+.series-intro {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.series-intro p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(232, 228, 223, 0.85);
+    margin-bottom: 1rem;
+}
+
+.series-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Series empty state */
+.series-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.series-empty p {
+    color: rgba(232, 228, 223, 0.7);
+    font-size: 1.1rem;
+}
+
+/* ===== Product Page (Renders Gallery) ===== */
+.product-page-header {
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.product-page-header .breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.product-page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    color: #fff;
+}
+
+.product-renders {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0 4rem;
+}
+
+.product-render-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.product-render-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.product-render-placeholder {
+    aspect-ratio: 4/3;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-render-placeholder span {
+    color: rgba(232, 228, 223, 0.4);
+}
+
+/* Product slab + content layout */
+.product-slab-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.product-slab-image {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.product-slab-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.product-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 1rem;
+}
+
+.product-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(232, 228, 223, 0.85);
+    margin-bottom: 1rem;
+}
+
+.product-content p:last-child {
+    margin-bottom: 0;
+}
+
+.product-renders-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 1.5rem;
+}
+
+.product-cta-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+@media (max-width: 767px) {
+    .product-slab-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .product-slab-image {
+        order: 1;
+    }
+
+    .product-content {
+        order: 2;
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .collection-hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .collection-hero h1,
+    .collection-hero h2 {
+        font-size: clamp(2rem, 4.5vw, 2.75rem);
+    }
+
+    .series-page-header {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .series-intro {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .series-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 0 3rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem 0 3rem;
+    }
+
+    .product-card-info {
+        padding: 1rem;
+    }
+
+    .product-card-title {
+        font-size: 1.1rem;
+    }
+
+    .collection-hero {
+        padding: 3rem 0 2rem;
+    }
+
+    .product-page-header {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .product-slab-content {
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .collection-hero {
+        padding: 2.5rem 0 1.5rem;
+    }
+
+    .collection-hero h1,
+    .collection-hero h2 {
+        font-size: 1.75rem;
+    }
+
+    .collection-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .series-grid {
+        gap: 1.25rem;
+        padding: 1rem 0 2.5rem;
+    }
+
+    .series-card-overlay {
+        padding: 1.5rem;
+    }
+
+    .series-card-title {
+        font-size: 1.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0 2rem;
+    }
+
+    .product-renders {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem 0 3rem;
+    }
+
+    .product-renders-heading {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-cta-section {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .series-card-overlay {
+        padding: 1rem;
+    }
+
+    .series-card-title {
+        font-size: 1.35rem;
+    }
+
+    .product-card-info {
+        padding: 0.875rem;
+    }
+
+    .product-card-title {
+        font-size: 1rem;
+    }
+}
+
+/* ===== Render Lightbox (full-size + slider) ===== */
+.render-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.render-lightbox.active {
+    display: flex;
+}
+
+.render-lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.render-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.render-lightbox-prev,
+.render-lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.render-lightbox-prev { left: 1rem; }
+.render-lightbox-next { right: 1rem; }
+
+.render-lightbox-prev:hover,
+.render-lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.render-lightbox-prev:disabled,
+.render-lightbox-next:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.render-lightbox-content {
+    max-width: 95vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.render-lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.render-lightbox-counter {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.product-render-item {
+    cursor: pointer;
+}
+
+.product-render-item img {
+    transition: opacity 0.2s;
+}
+
+.product-render-item:hover img {
+    opacity: 0.9;
+}
+
+/* Lightbox - Mobile responsive */
+@media (max-width: 768px) {
+    .render-lightbox {
+        padding: 1rem;
+    }
+
+    .render-lightbox-close {
+        top: max(1rem, env(safe-area-inset-top));
+        right: max(1rem, env(safe-area-inset-right));
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .render-lightbox-prev {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        left: 0.5rem;
+    }
+
+    .render-lightbox-next {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        right: 0.5rem;
+    }
+
+    .render-lightbox-content img {
+        max-height: 85vh;
+    }
+
+    .render-lightbox-counter {
+        bottom: max(1rem, env(safe-area-inset-bottom));
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .render-lightbox {
+        padding: 0.75rem;
+    }
+
+    .render-lightbox-close {
+        top: max(0.75rem, env(safe-area-inset-top));
+        right: max(0.75rem, env(safe-area-inset-right));
+    }
+
+    .render-lightbox-content img {
+        max-height: 80vh;
+    }
+}

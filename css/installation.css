@@ -1,0 +1,347 @@
+/**
+ * Glowstone - Installation Page
+ * Responsive, animated, SEO-friendly
+ */
+
+.install-section,
+.install-cta {
+    scroll-margin-top: 70px;
+}
+
+/* ===== Hero ===== */
+.install-hero {
+    position: relative;
+    min-height: 50vh;
+    min-height: 50dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.install-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.install-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 15, 15, 0.5) 0%,
+        rgba(15, 15, 15, 0.75) 50%,
+        rgba(15, 15, 15, 0.95) 100%
+    );
+}
+
+.install-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 720px;
+}
+
+.install-breadcrumb {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.install-breadcrumb a {
+    color: var(--navbar-accent);
+    text-decoration: none;
+}
+
+.install-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.install-breadcrumb span {
+    color: rgba(232, 228, 223, 0.7);
+}
+
+.install-hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    animation: installFadeInUp 0.7s ease-out;
+}
+
+.install-hero-text {
+    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.65;
+    animation: installFadeInUp 0.7s ease-out 0.15s both;
+}
+
+@keyframes installFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Section ===== */
+.install-section {
+    padding: 4rem 0;
+}
+
+.install-section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #e8e4df;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ===== Steps ===== */
+.install-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.install-step:last-of-type {
+    border-bottom: none;
+}
+
+.install-step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(201, 169, 98, 0.35);
+    line-height: 1;
+}
+
+.install-step-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 0.35rem;
+}
+
+.install-step-subtitle {
+    font-size: 0.9rem;
+    color: var(--navbar-accent);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.install-step-content > p {
+    font-size: 1rem;
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+}
+
+.install-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.install-checklist li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: rgba(232, 228, 223, 0.85);
+    line-height: 1.6;
+}
+
+.install-checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    background: var(--navbar-accent);
+    border-radius: 50%;
+}
+
+.install-checklist li:last-child {
+    margin-bottom: 0;
+}
+
+.install-checklist strong {
+    color: #e8e4df;
+}
+
+/* ===== CTA ===== */
+.install-cta {
+    padding: 4rem 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 15, 15, 0.5),
+        rgba(15, 15, 15, 1)
+    );
+}
+
+.install-cta-content {
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.install-cta-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 0.75rem;
+}
+
+.install-cta-content p {
+    font-size: 1rem;
+    color: rgba(232, 228, 223, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.btn-install {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--navbar-accent);
+    color: #0f0f0f;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-install:hover {
+    background: #d4b872;
+    color: #0f0f0f;
+    transform: translateY(-2px);
+}
+
+.btn-install:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+    .install-step {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .install-hero {
+        min-height: 45vh;
+        padding-top: 70px;
+    }
+
+    .install-hero-content {
+        padding: 1.5rem;
+    }
+
+    .install-section {
+        padding: 3rem 0;
+    }
+
+    .install-section-heading {
+        margin-bottom: 2rem;
+    }
+
+    .install-step {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 0;
+    }
+
+    .install-step-number {
+        font-size: 2rem;
+    }
+
+    .install-step-content h3 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .install-hero {
+        min-height: 40vh;
+    }
+
+    .install-hero-content {
+        padding: 1rem;
+    }
+
+    .install-hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .install-hero-text {
+        font-size: 0.9rem;
+    }
+
+    .install-section {
+        padding: 2.5rem 0;
+    }
+
+    .install-section-heading {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .install-step {
+        padding: 1.5rem 0;
+    }
+
+    .install-step-number {
+        font-size: 1.75rem;
+    }
+
+    .install-step-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .install-checklist li {
+        font-size: 0.9rem;
+        padding-left: 1.25rem;
+    }
+
+    .install-cta {
+        padding: 3rem 0;
+    }
+
+    .install-cta-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .install-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .install-step-content > p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .install-hero-content h1,
+    .install-hero-text {
+        animation: none;
+    }
+}

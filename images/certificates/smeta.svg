@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" fill="#fff" rx="8"/>
+  <text x="60" y="52" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a365d" text-anchor="middle">SEDEX</text>
+  <text x="60" y="72" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2c5282" text-anchor="middle">SMETA</text>
+  <text x="60" y="88" font-family="Arial, sans-serif" font-size="8" fill="#4a5568" text-anchor="middle">Ethical Trade Audit</text>
+</svg>

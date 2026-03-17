@@ -1,0 +1,485 @@
+/**
+ * Glowstone - Care & Maintenance Page Styles
+ * Caesarstone-inspired layout with Glowstone branding
+ */
+
+/* Scroll offset for fixed navbar */
+.care-section,
+.care-warranty {
+    scroll-margin-top: 70px;
+}
+
+/* ===== Hero ===== */
+.care-hero {
+    position: relative;
+    min-height: 70vh;
+    min-height: 70dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.care-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.care-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 15, 15, 0.5) 0%,
+        rgba(15, 15, 15, 0.7) 50%,
+        rgba(15, 15, 15, 0.95) 100%
+    );
+}
+
+.care-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.care-breadcrumb {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.care-breadcrumb a {
+    color: var(--navbar-accent);
+    text-decoration: none;
+}
+
+.care-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.care-breadcrumb span {
+    color: rgba(232, 228, 223, 0.7);
+}
+
+.care-hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.care-hero-text {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.care-hero-text:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.care-pdf-link {
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+/* ===== Content Block ===== */
+.care-content-block {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.care-content-block p {
+    font-size: 1rem;
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.care-content-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== Dos and Don'ts ===== */
+.care-dosdonts {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.care-dosdonts-intro {
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(232, 228, 223, 0.85);
+    margin-bottom: 2rem;
+}
+
+.care-dosdonts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.care-dos-col,
+.care-donts-col {
+    text-align: center;
+}
+
+.care-dos-col h3,
+.care-donts-col h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 1rem;
+}
+
+.care-dos-col h3 {
+    color: #81c784;
+}
+
+.care-donts-col h3 {
+    color: #e57373;
+}
+
+.care-dos-col ul,
+.care-donts-col ul {
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    text-align: left;
+}
+
+.care-dos-col li,
+.care-donts-col li {
+    font-size: 0.95rem;
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+}
+
+/* ===== Applications ===== */
+.care-applications-intro {
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(232, 228, 223, 0.85);
+    margin-bottom: 2rem;
+}
+
+.care-applications-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.care-app-item {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(201, 169, 98, 0.25);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #e8e4df;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.care-app-item:hover {
+    border-color: rgba(201, 169, 98, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Section Headings ===== */
+.care-section {
+    padding: 4rem 0;
+}
+
+.care-tips-alt {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.care-section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 600;
+    color: #e8e4df;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ===== Tips Grid - Caesarstone-style thumbnails ===== */
+.care-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.care-tip-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 169, 98, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.care-tip-card:hover {
+    border-color: rgba(201, 169, 98, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.care-tip-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.care-tip-thumb svg {
+    width: 56px;
+    height: 56px;
+    color: var(--navbar-accent);
+}
+
+.care-tip-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin: 0;
+    padding: 1rem 1.25rem 0.25rem;
+}
+
+.care-tip-card p {
+    font-size: 0.875rem;
+    color: rgba(232, 228, 223, 0.85);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 1.25rem 1.25rem;
+}
+
+/* ===== Step-by-Step Accordion ===== */
+.care-steps {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.care-accordion {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.care-accordion-item {
+    border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.care-accordion-item:last-child {
+    border-bottom: none;
+}
+
+.care-accordion-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    background: transparent;
+    border: none;
+    color: #e8e4df;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.care-accordion-btn:hover {
+    color: var(--navbar-accent);
+}
+
+.care-accordion-btn:focus-visible {
+    outline: 2px solid var(--navbar-accent);
+    outline-offset: 2px;
+}
+
+.care-accordion-btn[aria-expanded="true"] .care-accordion-icon {
+    transform: rotate(45deg);
+}
+
+.care-accordion-icon {
+    font-size: 1.5rem;
+    color: var(--navbar-accent);
+    transition: transform 0.3s ease;
+}
+
+.care-accordion-body {
+    padding: 0 0 1.5rem 0;
+}
+
+.care-accordion-body ol {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.care-accordion-body li {
+    margin-bottom: 0.75rem;
+    color: rgba(232, 228, 223, 0.85);
+    line-height: 1.6;
+}
+
+.care-accordion-body li:last-child {
+    margin-bottom: 0;
+}
+
+.care-accordion-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.7;
+}
+
+/* ===== FAQ ===== */
+.care-faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.care-faq-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.care-faq-item:last-child {
+    border-bottom: none;
+}
+
+.care-faq-item dt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 0.75rem;
+}
+
+.care-faq-item dd {
+    font-size: 0.95rem;
+    color: rgba(232, 228, 223, 0.85);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== Warranty CTA ===== */
+.care-warranty {
+    padding: 4rem 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 15, 15, 0.6),
+        rgba(15, 15, 15, 1)
+    );
+}
+
+.care-warranty-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.care-warranty-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 600;
+    color: #e8e4df;
+    margin-bottom: 1rem;
+}
+
+.care-warranty-content p {
+    font-size: 1rem;
+    color: rgba(232, 228, 223, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.btn-care {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--navbar-accent);
+    color: #0f0f0f;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-care:hover {
+    background: #d4b872;
+    color: #0f0f0f;
+    transform: translateY(-2px);
+}
+
+.btn-care:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+    .care-tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .care-hero {
+        min-height: 60vh;
+        padding-top: 70px;
+    }
+
+    .care-section {
+        padding: 3rem 0;
+    }
+
+    .care-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .care-accordion-btn {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .care-dosdonts-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .care-hero-content {
+        padding: 1rem;
+    }
+
+    .care-warranty {
+        padding: 3rem 0;
+    }
+
+    .care-applications-grid {
+        flex-direction: column;
+    }
+
+    .care-app-item {
+        text-align: center;
+    }
+}
