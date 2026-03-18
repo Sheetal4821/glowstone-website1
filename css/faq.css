@@ -4,8 +4,9 @@
  */
 
 /* Scroll offset for fixed navbar */
-.faq-section {
-    scroll-margin-top: 80px;
+.faq-section,
+#main-content {
+    scroll-margin-top: clamp(70px, 10vw, 90px);
 }
 
 .visually-hidden {
@@ -279,5 +280,51 @@
     .faq-btn {
         font-size: 1rem;
         padding: 1rem 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .faq-hero {
+        min-height: 32vh;
+    }
+
+    .faq-hero-content h1 {
+        font-size: 1.35rem;
+    }
+
+    .faq-section {
+        padding: 2.5rem 0 3.5rem;
+    }
+
+    .faq-btn {
+        font-size: 0.95rem;
+        padding: 0.9rem 0;
+    }
+}
+
+/* Safe area for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .faq-section .container,
+    .faq-hero-content {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* Touch-friendly accordion */
+@media (hover: none) and (pointer: coarse) {
+    .faq-btn {
+        padding: 1.2rem 0;
+        min-height: 48px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .faq-item,
+    .faq-btn,
+    .faq-icon,
+    .btn-faq {
+        transition: none;
     }
 }

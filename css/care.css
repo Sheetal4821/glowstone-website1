@@ -1,12 +1,413 @@
 /**
  * Glowstone - Care & Maintenance Page Styles
  * Caesarstone-inspired layout with Glowstone branding
+ * Responsive, SEO-friendly, smooth animations
  */
+
+:root {
+    --care-gold: #c9a84c;
+    --care-green: #3aaa8c;
+    --care-cream: #f5f0ea;
+    --care-black: #0d0c0b;
+}
 
 /* Scroll offset for fixed navbar */
 .care-section,
-.care-warranty {
-    scroll-margin-top: 70px;
+.care-warranty,
+#main-content {
+    scroll-margin-top: clamp(70px, 10vw, 90px);
+}
+
+/* ===== Progress bar ===== */
+#care-progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--care-green), var(--care-gold));
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ===== Hero scroll section ===== */
+#care-hero {
+    position: relative;
+    height: 800vh;
+}
+
+#care-pin {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+#care-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#care-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.42) 0%,
+        transparent 28%,
+        transparent 68%,
+        rgba(0, 0, 0, 0.52) 100%);
+}
+
+.care-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+#care-p0 {
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5vw 10vh;
+    text-align: center;
+}
+
+#care-p1 {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 8vw;
+}
+
+#care-p2 {
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 8vw;
+    text-align: right;
+}
+
+#care-p3 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.care-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--care-gold);
+    font-weight: 300;
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.care-eyebrow::before,
+.care-eyebrow::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--care-gold);
+    opacity: 0.5;
+}
+
+#care-p2 .care-eyebrow {
+    flex-direction: row-reverse;
+}
+
+.care-panel .care-panel-title,
+.care-panel h1,
+.care-panel h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    font-weight: 300;
+    line-height: 1.07;
+    color: var(--care-cream);
+    margin-bottom: 1.2rem;
+}
+
+.care-panel-title em,
+.care-panel h2 em {
+    font-style: italic;
+    color: var(--care-gold);
+    font-weight: 300;
+}
+
+.care-panel-title strong,
+.care-panel h2 strong {
+    font-weight: 600;
+    color: var(--care-green);
+}
+
+.care-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+    font-weight: 200;
+    color: rgba(245, 240, 234, 0.72);
+    max-width: 420px;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+#care-p2 .care-desc {
+    margin-left: auto;
+}
+
+.care-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--care-cream);
+    text-decoration: none;
+    font-weight: 300;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.care-link-bar {
+    display: block;
+    width: 44px;
+    height: 1px;
+    background: var(--care-gold);
+    transition: width 0.35s ease;
+}
+
+.care-link:hover .care-link-bar {
+    width: 68px;
+}
+
+#care-p2 .care-link {
+    flex-direction: row-reverse;
+}
+
+.care-link.care-link-right {
+    justify-content: flex-end;
+}
+
+.care-link.care-link-right .care-link-bar {
+    transform-origin: right;
+}
+
+/* Scroll hint */
+#care-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.5s;
+}
+
+#care-hint span {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 234, 0.38);
+}
+
+.c-mouse {
+    width: 19px;
+    height: 30px;
+    border: 1px solid rgba(245, 240, 234, 0.22);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.c-dot {
+    width: 2px;
+    height: 5px;
+    background: var(--care-gold);
+    border-radius: 2px;
+    animation: cDot 1.8s ease-in-out infinite;
+}
+
+@keyframes cDot {
+    0% { transform: translateY(0); opacity: 1; }
+    70% { transform: translateY(9px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+/* Hero responsive */
+@media (min-width: 1400px) {
+    .care-panel h1,
+    .care-panel h2 {
+        font-size: 6.5rem;
+    }
+    .care-desc {
+        font-size: 1.05rem;
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 1199px) {
+    #care-p0 {
+        padding: 0 5vw 8vh;
+    }
+    #care-p1,
+    #care-p2 {
+        padding: 0 5vw;
+    }
+    .care-panel h1,
+    .care-panel h2 {
+        font-size: clamp(2.6rem, 5vw, 4.5rem);
+    }
+    .care-desc {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 991px) {
+    #care-p1,
+    #care-p2 {
+        padding: 0 4vw;
+    }
+    .care-panel h1,
+    .care-panel h2 {
+        font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    }
+    .care-desc {
+        font-size: 0.9rem;
+        max-width: 360px;
+    }
+    .care-eyebrow {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #care-hero {
+        height: 350vh;
+    }
+    #care-p0,
+    #care-p1,
+    #care-p2 {
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 0 5vw 5vh;
+        text-align: left;
+    }
+    .care-panel h1,
+    .care-panel h1,
+    .care-panel h2 {
+        font-size: clamp(1.8rem, 5.5vw, 2.5rem);
+        margin-bottom: 0.8rem;
+    }
+    .care-eyebrow {
+        font-size: 0.58rem;
+        margin-bottom: 0.6rem;
+    }
+    .care-desc {
+        font-size: 0.83rem;
+        max-width: 100%;
+        line-height: 1.75;
+        margin-bottom: 1.2rem;
+    }
+    #care-p2 .care-desc {
+        margin-left: 0;
+    }
+    #care-p2 .care-eyebrow {
+        flex-direction: row;
+    }
+    #care-p2 .care-link {
+        flex-direction: row;
+    }
+    .care-link {
+        font-size: 0.62rem;
+    }
+    .care-link-bar {
+        width: 32px;
+    }
+    #care-hint span {
+        font-size: 0.52rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #care-hero {
+        height: 300vh;
+    }
+    #care-p0,
+    #care-p1,
+    #care-p2 {
+        padding: 0 5vw 4vh;
+    }
+    .care-panel h1,
+    .care-panel h2 {
+        font-size: 1.65rem;
+        line-height: 1.1;
+    }
+    .care-eyebrow {
+        font-size: 0.55rem;
+        letter-spacing: 0.22em;
+    }
+    .care-desc {
+        font-size: 0.79rem;
+        margin-bottom: 0.9rem;
+    }
+    .care-link {
+        font-size: 0.58rem;
+        gap: 0.6rem;
+    }
+    .care-link-bar {
+        width: 26px;
+    }
+    .c-mouse {
+        width: 16px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 360px) {
+    #care-hero {
+        height: 260vh;
+    }
+    .care-panel h1,
+    .care-panel h2 {
+        font-size: 1.45rem;
+    }
+    .care-desc {
+        font-size: 0.75rem;
+    }
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+    #care-pin {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .care-panel,
+    .care-link-bar,
+    .c-dot {
+        transition: none;
+    }
+    .c-dot {
+        animation: none;
+    }
 }
 
 /* ===== Hero ===== */
@@ -166,34 +567,230 @@
     margin-bottom: 0.6rem;
 }
 
-/* ===== Applications ===== */
+/* ===== Applications - Bento Grid Gallery ===== */
 .care-applications-intro {
     text-align: center;
     font-size: 1rem;
     color: rgba(232, 228, 223, 0.85);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
-.care-applications-grid {
+.care-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 0.75rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.care-bento-card {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.care-bento-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.care-bento-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.care-bento-card:hover .care-bento-link img {
+    transform: scale(1.04);
+}
+
+.care-bento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 12, 11, 0.95) 0%, rgba(13, 12, 11, 0.4) 45%, transparent 70%);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.25rem 1rem;
+    transition: background 0.3s ease;
 }
 
-.care-app-item {
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(201, 169, 98, 0.25);
-    border-radius: 6px;
-    font-size: 0.95rem;
-    color: #e8e4df;
-    transition: border-color 0.3s ease, background 0.3s ease;
+.care-bento-card:hover .care-bento-overlay {
+    background: linear-gradient(to top, rgba(13, 12, 11, 0.98) 0%, rgba(13, 12, 11, 0.6) 60%);
 }
 
-.care-app-item:hover {
-    border-color: rgba(201, 169, 98, 0.5);
-    background: rgba(255, 255, 255, 0.08);
+.care-bento-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--care-cream);
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+.care-bento-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 200;
+    color: rgba(245, 240, 234, 0.7);
+    line-height: 1.5;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.care-bento-card:hover .care-bento-desc {
+    max-height: 4em;
+    opacity: 1;
+}
+
+/* Bento layout: Kitchen = biggest, Flooring = wide */
+.care-bento-kitchen {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.care-bento-kitchen .care-bento-link {
+    min-height: 280px;
+}
+
+.care-bento-shelves {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.care-bento-table {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.care-bento-dining {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.care-bento-backsplash {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.care-bento-vanity {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.care-bento-wall {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.care-bento-flooring {
+    grid-column: 3 / 5;
+    grid-row: 3;
+}
+
+.care-bento-flooring .care-bento-link {
+    min-height: 200px;
+}
+
+/* Applications responsive */
+@media (max-width: 991px) {
+    .care-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+    .care-bento-kitchen {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    .care-bento-kitchen .care-bento-link {
+        min-height: 220px;
+    }
+    .care-bento-shelves {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .care-bento-table {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .care-bento-dining {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .care-bento-backsplash {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .care-bento-vanity {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .care-bento-wall {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    .care-bento-flooring {
+        grid-column: 1 / 3;
+        grid-row: 5;
+    }
+}
+
+@media (max-width: 575px) {
+    .care-bento-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    .care-bento-kitchen,
+    .care-bento-shelves,
+    .care-bento-table,
+    .care-bento-dining,
+    .care-bento-backsplash,
+    .care-bento-vanity,
+    .care-bento-wall,
+    .care-bento-flooring {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    .care-bento-kitchen .care-bento-link {
+        min-height: 200px;
+    }
+    .care-bento-flooring .care-bento-link {
+        min-height: 180px;
+    }
+    .care-bento-desc {
+        max-height: 4em;
+        opacity: 1;
+    }
+    .care-bento-card:hover .care-bento-desc {
+        max-height: 4em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .care-bento-link img {
+        transition: none;
+    }
+    .care-bento-card:hover .care-bento-link img {
+        transform: none;
+    }
+    .care-bento-desc {
+        max-height: 4em;
+        opacity: 1;
+    }
 }
 
 /* ===== Section Headings ===== */
@@ -475,11 +1072,70 @@
         padding: 3rem 0;
     }
 
-    .care-applications-grid {
-        flex-direction: column;
+    .care-section {
+        padding: 2.5rem 0;
     }
 
-    .care-app-item {
-        text-align: center;
+    .care-section-heading {
+        font-size: clamp(1.5rem, 5vw, 1.85rem);
+        margin-bottom: 2rem;
+    }
+
+    .care-content-block p {
+        font-size: 0.95rem;
+    }
+
+    .care-dos-col h3,
+    .care-donts-col h3 {
+        font-size: 1.2rem;
+    }
+
+    .care-dos-col li,
+    .care-donts-col li {
+        font-size: 0.9rem;
+    }
+
+    .care-accordion-btn {
+        font-size: 1rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .care-section {
+        padding: 2rem 0;
+    }
+
+    .care-dosdonts-grid {
+        gap: 1.5rem;
+    }
+
+    .care-dos-col ul,
+    .care-donts-col ul {
+        padding-left: 1rem;
+    }
+
+    .care-bento-label {
+        font-size: 1.15rem;
+    }
+}
+
+/* Safe area for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    #care-progress {
+        left: env(safe-area-inset-left);
+    }
+
+    .care-section .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* Touch-friendly accordion */
+@media (hover: none) and (pointer: coarse) {
+    .care-accordion-btn {
+        padding: 1.1rem 0;
+        min-height: 48px;
     }
 }

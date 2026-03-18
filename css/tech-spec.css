@@ -17,8 +17,9 @@
 }
 
 .tech-section,
-.tech-cta {
-    scroll-margin-top: 70px;
+.tech-cta,
+#main-content {
+    scroll-margin-top: clamp(70px, 10vw, 90px);
 }
 
 /* ===== Hero ===== */
@@ -390,4 +391,51 @@
     .tech-table {
         min-width: 380px;
     }
+}
+
+@media (max-width: 360px) {
+    .tech-hero {
+        min-height: 38vh;
+    }
+
+    .tech-hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .tech-hero-text {
+        font-size: 0.85rem;
+    }
+
+    .tech-section {
+        padding: 2rem 0;
+    }
+
+    .tech-section-heading {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .tech-table th,
+    .tech-table td {
+        padding: 0.6rem 0.65rem;
+        font-size: 0.7rem;
+    }
+
+    .tech-table {
+        min-width: 340px;
+    }
+}
+
+/* Safe area for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .tech-section .container,
+    .tech-hero-content {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* Touch-friendly table scroll hint */
+.tech-table-wrapper {
+    scrollbar-width: thin;
 }

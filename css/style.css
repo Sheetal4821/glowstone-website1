@@ -50,7 +50,7 @@ body {
     color: #e8e4df;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 #home.hero {
@@ -66,7 +66,7 @@ body > section.hero:first-of-type {
 
 /* Prevent horizontal overflow on small screens */
 html {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* Navbar - Base (transparent like Caesarstone, always on top over hero) */
@@ -76,8 +76,9 @@ html {
     -webkit-backdrop-filter: blur(0);
     border-bottom: 1px solid transparent;
     padding: 0.75rem 0;
+    padding-top: max(0.75rem, env(safe-area-inset-top, 0px));
     transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    min-height: 60px;
+    min-height: max(60px, calc(60px + env(safe-area-inset-top, 0px)));
     z-index: 1100;
 }
 
@@ -123,6 +124,8 @@ html {
     border-radius: 4px;
     transition: all 0.3s ease;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .nav-link:hover {
@@ -232,8 +235,10 @@ html {
         border-radius: 8px;
         border: 1px solid rgba(201, 169, 98, 0.15);
         max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
     }
 
     .nav-link {
@@ -316,6 +321,18 @@ html {
 
     .hero-subtitle {
         font-size: 0.9rem;
+    }
+}
+
+/* Very small screens (320px) - ensure navbar fits */
+@media (max-width: 360px) {
+    .navbar-logo {
+        height: 34px;
+    }
+
+    .navbar .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
     }
 }
 
@@ -694,11 +711,29 @@ html {
     font-size: 0.95rem;
     color: rgba(232, 228, 223, 0.9);
     text-align: center;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-/* Scroll targets - prevent content hiding behind fixed navbar */
+@media (max-width: 360px) {
+    .why-love-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .why-love-item {
+        padding: 1rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Scroll targets - prevent content hiding behind fixed navbar (responsive for all screens) */
 #collection, #vision, #about-us, #contact, #visualizer, #main-content, #why-glowstone {
-    scroll-margin-top: 80px;
+    scroll-margin-top: clamp(70px, 10vw, 90px);
+}
+@supports (padding: env(safe-area-inset-top)) {
+    #collection, #vision, #about-us, #contact, #visualizer, #main-content, #why-glowstone {
+        scroll-margin-top: max(70px, calc(60px + env(safe-area-inset-top)));
+    }
 }
 
 /* Collection Introduction Section - Eternal style */

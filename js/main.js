@@ -55,17 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
         animateElements.forEach(function(el) { observer.observe(el); });
     }
 
-    // Navbar scroll effect - transparent over hero, solid after (same on all pages)
+    // Navbar scroll effect - transparent over first section (hero), solid after (same on all pages)
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        var heroScrollSection = document.querySelector('.hero.hero-scroll-driven');
-        var pageHero = document.querySelector('.about-hero, .contact-hero, .faq-hero, .care-hero, .tech-hero, .install-hero');
+        // Detect first section: scroll-driven heroes (#gs-hero, #sus-hero, #care-hero, .inst-step) or page heroes (.about-hero, etc.)
+        var heroScrollSection = document.querySelector('#gs-hero, #sus-hero, #care-hero, .inst-step');
+        var pageHero = document.querySelector('.about-hero, .contact-hero, .faq-hero, .tech-hero, .sh');
 
         function updateNavbarScroll() {
             var scrollY = window.scrollY || window.pageYOffset;
             var threshold;
             if (heroScrollSection) {
-                threshold = window.innerHeight * 5;
+                threshold = heroScrollSection.offsetHeight || window.innerHeight * 5;
             } else if (pageHero) {
                 threshold = Math.min(pageHero.offsetHeight || 300, window.innerHeight * 0.8);
             } else {
@@ -82,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 16);
         }, { passive: true });
         window.addEventListener('resize', updateNavbarScroll);
+        window.addEventListener('orientationchange', function() {
+            setTimeout(updateNavbarScroll, 100);
+        });
         updateNavbarScroll();
     }
 

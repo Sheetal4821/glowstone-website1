@@ -2,31 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Glowstone - Premium engineered quartz surfaces. 93% pure natural quartz, mineral-infused, anti-microbial certified. Countertops, vanity tops, wall cladding for residential and commercial projects in India.">
-    <meta name="keywords" content="quartz surfaces, engineered quartz, countertops, vanity tops, wall cladding, Glowstone, Bhilwara, premium surfaces">
+    <meta name="keywords" content="quartz surfaces, engineered quartz, countertops, vanity tops, wall cladding, Glowstone, Bhilwara, premium surfaces, quartz slabs India">
     <meta name="theme-color" content="#0f0f0f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.glowstone.co.in/">
-    <title>Glowstone | Premium Quartz Surfaces</title>
+    <title>Glowstone | Premium Quartz Surfaces | 93% Pure Quartz Countertops India</title>
     <meta property="og:title" content="Glowstone | Premium Quartz Surfaces">
     <meta property="og:description" content="Recreating dream surfaces that last. Premium engineered quartz - 93% pure natural quartz, crafted for exceptional durability.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.glowstone.co.in/">
+    <meta property="og:image" content="https://www.glowstone.co.in/images/hero-2.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Glowstone | Premium Quartz Surfaces">
     <meta name="twitter:description" content="Recreating dream surfaces that last. Premium engineered quartz surfaces.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    :root { --gs-cream:#f5f0ea; --gs-gold:#c9a84c; --gs-green:#3aaa8c; }
+    #gs-hero { position:relative; height:800vh; }
+    #gs-hero-pin { position:sticky; top:0; width:100%; height:100vh; overflow:hidden; background:#000; }
+    #gs-hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    #gs-hero-overlay { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(to bottom,rgba(0,0,0,0.42) 0%,transparent 28%,transparent 68%,rgba(0,0,0,0.52) 100%); }
+    .gs-panel { position:absolute; inset:0; z-index:3; display:flex; flex-direction:column; opacity:0; pointer-events:none; will-change:opacity,transform; }
+    #gs-p0 { align-items:center;     justify-content:flex-end;  padding:0 5vw 10vh; text-align:center; }
+    #gs-p1 { align-items:flex-start; justify-content:center;    padding:0 8vw; }
+    #gs-p2 { align-items:flex-end;   justify-content:center;    padding:0 8vw; text-align:right; }
+    #gs-p3 { align-items:center;     justify-content:center;    text-align:center; }
+    .gs-eyebrow { font-family:'Jost',sans-serif; font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--gs-gold); font-weight:300; margin-bottom:0.9rem; display:flex; align-items:center; gap:0.7rem; }
+    .gs-eyebrow::before,.gs-eyebrow::after { content:''; display:block; width:24px; height:1px; background:var(--gs-gold); opacity:0.5; }
+    .gs-panel h2, .gs-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.25rem,6vw,5.8rem); font-weight:300; line-height:1.07; color:var(--gs-cream); margin-bottom:1.2rem; }
+    .gs-link-right { justify-content:flex-end; }
+    .gs-link-right .gs-link-bar { transform-origin:right; }
+    .gs-panel h2 em { font-style:italic; color:var(--gs-gold); font-weight:300; }
+    .gs-panel h2 strong { font-weight:600; color:var(--gs-green); }
+    .gs-desc { font-family:'Jost',sans-serif; font-size:clamp(0.85rem,1.1vw,0.98rem); font-weight:200; color:rgba(245,240,234,0.72); max-width:400px; line-height:1.9; margin-bottom:2rem; }
+    #gs-p2 .gs-desc { margin-left:auto; }
+    .gs-link { font-family:'Jost',sans-serif; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gs-cream); text-decoration:none; font-weight:300; display:inline-flex; align-items:center; gap:0.9rem; }
+    .gs-link-bar { display:block; width:44px; height:1px; background:var(--gs-gold); transition:width 0.35s ease; }
+    .gs-link:hover .gs-link-bar { width:68px; }
+    .gs-stats { display:flex; gap:2.5rem; margin-top:0.4rem; }
+    .gs-stat-num { font-family:'Cormorant Garamond',serif; font-size:2.1rem; font-weight:600; color:var(--gs-gold); display:block; line-height:1; }
+    .gs-stat-lbl { font-family:'Jost',sans-serif; font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,234,0.4); display:block; margin-top:3px; }
+    #gs-hint { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); z-index:10; display:flex; flex-direction:column; align-items:center; gap:0.5rem; transition:opacity 0.5s; }
+    #gs-hint span { font-family:'Jost',sans-serif; font-size:0.58rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(245,240,234,0.38); }
+    .gs-mouse-box { width:19px; height:30px; border:1px solid rgba(245,240,234,0.22); border-radius:10px; display:flex; justify-content:center; padding-top:5px; }
+    .gs-mouse-dot { width:2px; height:5px; background:var(--gs-gold); border-radius:2px; animation:gsDot 1.8s ease-in-out infinite; }
+    @keyframes gsDot { 0%{transform:translateY(0);opacity:1;} 70%{transform:translateY(9px);opacity:0;} 100%{transform:translateY(0);opacity:0;} }
+    #gs-progress { position:fixed; bottom:0; left:0; height:2px; width:0%; background:linear-gradient(90deg,var(--gs-green),var(--gs-gold)); z-index:9999; pointer-events:none; }
+    @media (max-width:991px) {
+      #gs-p0,#gs-p1,#gs-p2,#gs-p3 { padding:0 5vw 8vh; }
+      .gs-panel h2,.gs-hero-title { font-size:clamp(2rem,5vw,3.5rem); }
+      .gs-desc { font-size:clamp(0.8rem,2vw,0.95rem); max-width:100%; }
+      .gs-stats { flex-wrap:wrap; gap:1.5rem; }
+    }
+    @media (max-width:575px) {
+      #gs-p0,#gs-p1,#gs-p2,#gs-p3 { padding:0 1rem 6vh; }
+      .gs-eyebrow { font-size:0.6rem; letter-spacing:0.25em; }
+      .gs-panel h2,.gs-hero-title { font-size:clamp(1.75rem,6vw,2.5rem); margin-bottom:0.9rem; }
+      .gs-desc { font-size:0.85rem; margin-bottom:1.25rem; }
+      .gs-stat-num { font-size:1.75rem; }
+      .gs-stat-lbl { font-size:0.52rem; }
+      #gs-hint { bottom:1.5rem; }
+      #gs-hint span { font-size:0.5rem; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .gs-panel,.gs-link-bar,#gs-hint { transition:none; }
+      .gs-mouse-dot { animation:none; opacity:0.6; }
+    }
+    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "https://www.glowstone.co.in/#organization",
         "name": "Glowstone",
-        "description": "Premium engineered quartz surfaces. 93% pure natural quartz, mineral-infused, anti-microbial certified.",
+        "description": "Premium engineered quartz surfaces. 93% pure natural quartz, mineral-infused, anti-microbial certified. Countertops, vanity tops, wall cladding for residential and commercial projects in India.",
         "url": "https://www.glowstone.co.in",
         "telephone": "+91-8306996722",
         "email": "sales@glowstone.co.in",
@@ -37,7 +95,11 @@
             "postalCode": "311001",
             "addressRegion": "Rajasthan",
             "addressCountry": "IN"
-        }
+        },
+        "sameAs": [
+            "https://www.instagram.com/glowstone.co.in",
+            "https://www.linkedin.com/company/glowstone"
+        ]
     }
     </script>
 </head>
@@ -54,6 +116,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown" aria-expanded="false">About</a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -93,28 +156,64 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Scroll-driven video (hand + powder from video content, TinyPod-style) -->
-    <section id="home" class="hero hero-video hero-scroll-driven" aria-label="Hero">
-        <div class="hero-video-wrap">
-            <!-- Performance: use preload="metadata", compress video to 3–5 MB, ~1920px width -->
-            <video
-                id="hero-video"
-                class="hero-video-element"
-                muted
-                playsinline
-                preload="metadata"
-                poster="images/collections/onyx-series/crystal-ash/render.png"
-                aria-hidden="true"
-            >
-                <source src="video/website%20(1).mp4" type="video/mp4">
-            </video>
-            <div class="hero-video-overlay" aria-hidden="true"></div>
+    <div id="gs-progress"></div>
+
+    <!-- Hero Section -->
+    <header id="home" role="banner" aria-label="Hero">
+      <div id="gs-hero">
+        <div id="gs-hero-pin">
+
+          <video id="gs-hero-video"
+            src="video/hero-optimized.mp4"
+            muted playsinline preload="metadata"
+            webkit-playsinline
+            aria-label="Glowstone quartz manufacturing process">
+          </video>
+
+          <div id="gs-hero-overlay" aria-hidden="true"></div>
+
+          <div class="gs-panel" id="gs-p0">
+            <div class="gs-eyebrow">Born from the Earth</div>
+            <h1 class="gs-hero-title">Feel the<br><em>Texture</em><br>of Perfection</h1>
+            <p class="gs-desc">Every Glowstone surface begins as a single touch — where raw mineral meets human craft.</p>
+            <a href="our-story.html" class="gs-link"><span class="gs-link-bar"></span>Discover Our Story</a>
+          </div>
+
+          <div class="gs-panel" id="gs-p1">
+            <div class="gs-eyebrow">The Process</div>
+            <h2 class="gs-hero-title">Pure<br><strong>Quartz</strong><br>Crystals</h2>
+            <p class="gs-desc">Each granule sourced for purity, colour and brilliance — before it ever becomes a slab.</p>
+            <div class="gs-stats">
+              <div><span class="gs-stat-num">93%</span><span class="gs-stat-lbl">Quartz Content</span></div>
+              <div><span class="gs-stat-num">50+</span><span class="gs-stat-lbl">Colour Ranges</span></div>
+              <div><span class="gs-stat-num">15yr</span><span class="gs-stat-lbl">Warranty</span></div>
+            </div>
+          </div>
+
+          <div class="gs-panel" id="gs-p2">
+            <div class="gs-eyebrow">The Transformation</div>
+            <h2 class="gs-hero-title">Forged<br>Under<br><em>Pressure</em></h2>
+            <p class="gs-desc">Intense compression fuses mineral and resin into a surface of extraordinary strength.</p>
+            <a href="collection-domestic.html" class="gs-link gs-link-right">
+              View Collections<span class="gs-link-bar"></span>
+            </a>
+          </div>
+
+          <div class="gs-panel" id="gs-p3">
+            <div class="gs-eyebrow">Glowstone Quartz Surfaces</div>
+            <h2 class="gs-hero-title">Surfaces<br>That <em>Endure</em><br>Beautifully</h2>
+            <p class="gs-desc">Engineered for architects and designers who never compromise on beauty or longevity.</p>
+            <a href="collection-domestic.html" class="gs-link"><span class="gs-link-bar"></span>Explore the Range</a>
+          </div>
+
+          <div id="gs-hint" aria-hidden="true">
+            <div class="gs-mouse-box"><div class="gs-mouse-dot"></div></div>
+            <span>Scroll to explore</span>
+          </div>
+
         </div>
-        <div class="hero-scroll-hint" aria-hidden="true">
-            <span class="hero-scroll-hint-line"></span>
-            <span class="hero-scroll-hint-dot"></span>
-        </div>
-    </section>
+      </div>
+    </header>
 
     <!-- Features Section -->
     <section class="features-bar" aria-label="Key features">
@@ -207,7 +306,7 @@
                 <span class="section-label">COLLECTION</span>
                 <h2 id="collection-heading" class="collection-heading">Discover Your Signature Surface</h2>
                 <p class="collection-text">Explore a curated selection of colours, patterns, and textures inspired by nature and modern design trends. From bold marble-inspired veining to subtle minimal tones, Glowstone offers surfaces that complement every interior vision.</p>
-                <a href="contact.html" class="btn-collection">View All Designs →</a>
+                <a href="collection-domestic.html" class="btn-collection">View All Designs →</a>
             </div>
         </div>
     </section>
@@ -217,25 +316,25 @@
         <div class="container">
             <div class="contact-wrapper animate-on-scroll">
                 <h2 class="contact-heading">Join us on this exciting journey as we shape the future of surfaces.</h2>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First name <span class="required">*</span></label>
-                            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="First name" autocomplete="given-name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last name <span class="required">*</span></label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last name" autocomplete="family-name" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="phone">Phone <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone" autocomplete="tel" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="Email" required>
+                            <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -279,7 +378,7 @@
                                 <img src="images/social/instagram.svg" alt="Instagram" class="footer-social-icon" width="18" height="18" loading="lazy">
                             </a>
                             <a href="https://www.linkedin.com/company/glowstone" target="_blank" rel="noopener" class="footer-social" aria-label="Follow us on LinkedIn">
-                                <img src="images/social/linkedin.svg" alt="LinkedIn" class="footer-social-icon" width="18" height="18" loading="lazy">
+                                <img src="images/brand-inlogo-hero-fg-dsk-v01-2x.png" alt="LinkedIn" class="footer-social-icon" width="18" height="18" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -315,7 +414,7 @@
                             <ul>
                                 <li><a href="contact.html">Contact Us</a></li>
                                 <li><a href="tel:+918306996722">+91-8306996722</a></li>
-                                <li><a href="mailto:sales@glowstone.co.in">sales@glowstone.co.in</a></li>
+                                <li><a href="/cdn-cgi/l/email-protection#c7b4a6aba2b487a0aba8b0b4b3a8a9a2e9a4a8e9aea9"><span class="__cf_email__" data-cfemail="deadbfb2bbad9eb9b2b1a9adaab1b0bbf0bdb1f0b7b0">[email&#160;protected]</span></a></li>
                             </ul>
                         </div>
                         <div class="footer-col">
@@ -338,9 +437,52 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js" defer></script>
+    <script>
+    (function(){
+      var hero   = document.getElementById('gs-hero');
+      var video  = document.getElementById('gs-hero-video');
+      var hint   = document.getElementById('gs-hint');
+      var bar    = document.getElementById('gs-progress');
+      var panels = ['gs-p0','gs-p1','gs-p2','gs-p3'].map(function(id){ return document.getElementById(id); });
+      var ranges = [[0.00,0.04,0.21,0.27],[0.26,0.30,0.48,0.54],[0.53,0.57,0.73,0.78],[0.77,0.82,0.97,1.00]];
+      function clamp(v,a,b){ return v<a?a:v>b?b:v; }
+      function norm(v,a,b){ return clamp((v-a)/(b-a),0,1); }
+      function ease(t){ return t*t*(3-2*t); }
+      function update(){
+        var scrolled = -hero.getBoundingClientRect().top;
+        var total    = hero.offsetHeight - window.innerHeight;
+        var p        = total>0 ? clamp(scrolled/total,0,1) : 0;
+        if(video.duration && isFinite(video.duration)){
+          var t = p*video.duration;
+          if(Math.abs(video.currentTime-t)>0.016) video.currentTime=t;
+        }
+        for(var i=0;i<panels.length;i++){
+          var r=ranges[i], op=Math.min(ease(norm(p,r[0],r[1])),1-ease(norm(p,r[2],r[3])));
+          panels[i].style.opacity=op;
+          panels[i].style.transform='translateY('+((1-op)*18)+'px)';
+        }
+        hint.style.opacity = p<0.02?'1':'0';
+        bar.style.width   = (p*100)+'%';
+      }
+      if(window.innerWidth<768){
+        hero.style.height='100vh';
+        hero.style.height='100dvh';
+        video.setAttribute('autoplay','');
+        video.setAttribute('loop','');
+        video.play().catch(function(){});
+        return;
+      }
+      var ticking=false;
+      function onScroll(){ if(!ticking){ requestAnimationFrame(function(){ update(); ticking=false; }); ticking=true; } }
+      function init(){
+        window.addEventListener('scroll',onScroll,{passive:true});
+        update();
+      }
+      if(video.readyState>=1) init();
+      else video.addEventListener('loadedmetadata',init);
+    })();
+    </script>
 </body>
 </html>

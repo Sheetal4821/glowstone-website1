@@ -2,42 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Glowstone Care Manual. How to clean quartz surfaces, dos and don'ts, routine care, cutting boards, trivets, stain removal. No sealer, no polishing required. Download PDF.">
-    <meta name="keywords" content="quartz care, quartz maintenance, Glowstone, countertop care, quartz cleaning, stain removal, Bhilwara">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Glowstone Care Manual. How to clean quartz surfaces, dos and don'ts, routine care, stain removal. No sealer, no polishing required.">
+    <meta name="keywords" content="quartz care, quartz maintenance, Glowstone, countertop care, quartz cleaning, stain removal">
     <meta name="theme-color" content="#0f0f0f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.glowstone.co.in/care-maintenance.html">
     <title>Care &amp; Maintenance | Glowstone - Quartz Surfaces</title>
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Care &amp; Maintenance | Glowstone Quartz Surfaces">
-    <meta property="og:description" content="Easy care for Glowstone quartz. Simple cleaning tips and maintenance for lasting beauty.">
+    <meta property="og:description" content="How to clean quartz surfaces, dos and don'ts, routine care. No sealer, no polishing required.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.glowstone.co.in/care-maintenance.html">
-    <meta property="og:image" content="https://www.glowstone.co.in/images/hero-bg.jpg">
+    <meta property="og:image" content="https://www.glowstone.co.in/images/hero-2.jpg">
     <meta property="og:locale" content="en_IN">
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Care &amp; Maintenance | Glowstone Quartz">
-    <meta name="twitter:description" content="Easy care for Glowstone quartz surfaces. Simple cleaning tips and maintenance.">
-
+    <meta name="twitter:title" content="Care &amp; Maintenance | Glowstone">
+    <meta name="twitter:description" content="How to clean quartz surfaces. No sealer, no polishing required.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/care.css">
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.glowstone.co.in/" },
-            { "@type": "ListItem", "position": 2, "name": "Care & Maintenance", "item": "https://www.glowstone.co.in/care-maintenance.html" }
-        ]
+        "@type": "WebPage",
+        "name": "Care &amp; Maintenance | Glowstone",
+        "description": "How to clean quartz surfaces, dos and don'ts, routine care. No sealer, no polishing required.",
+        "url": "https://www.glowstone.co.in/care-maintenance.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.glowstone.co.in/" },
+                { "@type": "ListItem", "position": 2, "name": "Care &amp; Maintenance", "item": "https://www.glowstone.co.in/care-maintenance.html" }
+            ]
+        }
     }
     </script>
 </head>
@@ -54,7 +54,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="about.html" data-bs-toggle="dropdown" aria-expanded="false">About</a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -82,22 +82,55 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="care-hero" role="banner">
-        <div class="care-hero-bg" aria-hidden="true"></div>
-        <div class="care-hero-content">
-            <nav class="care-breadcrumb" aria-label="Breadcrumb">
-                <a href="index.html">Home</a>
-                <span aria-hidden="true"> / </span>
-                <span>Care &amp; Maintenance</span>
-            </nav>
-            <h1>Care and Maintenance<br>Glowing Forever</h1>
-            <p class="care-hero-text">Easy to clean, cool to maintain—no sealer, no polishing required. Natural sheen and glow lasts forever.</p>
-            <a href="files/care-manual.pdf" class="btn-care care-pdf-link" download>Download Care Manual (PDF)</a>
-        </div>
-    </header>
+    <div id="care-progress"></div>
 
+    <!-- ══ HERO — scroll-scrub video exactly like index hero ══ -->
+    <section aria-label="Care and Maintenance Hero">
+      <div id="care-hero">
+        <div id="care-pin">
+
+          <!-- wine-optimized.mp4 — place in video/ folder -->
+          <video id="care-video" muted playsinline preload="auto" webkit-playsinline>
+            <source src="video/wine-optimized.mp4" type="video/mp4">
+          </video>
+
+          <div id="care-overlay"></div>
+
+          <!-- Panel 0: Wine pouring on quartz (0s–2s) scroll 0%–27% -->
+          <div class="care-panel" id="care-p0">
+            <div class="care-eyebrow">Glowstone Quartz</div>
+            <h1 class="care-panel-title">Built to<br><em>Resist</em><br>Everything</h1>
+            <p class="care-desc">Wine, turmeric, sauces — Glowstone quartz resists the toughest everyday spills. No sealer, no polishing required.</p>
+            <a href="files/care-manual.pdf" download class="care-link"><span class="care-link-bar"></span>Download Care Manual</a>
+          </div>
+
+          <!-- Panel 1: Wiping the spill (2s–4s) scroll 28%–54% -->
+          <div class="care-panel" id="care-p1">
+            <div class="care-eyebrow">Routine Care</div>
+            <h2 class="care-panel-title">Easy to<br><strong>Clean</strong></h2>
+            <p class="care-desc">Wipe up spills immediately with a damp cloth and mild detergent. No harsh chemicals needed — just simple, effortless care every day.</p>
+          </div>
+
+          <!-- Panel 2: Swirl clean surface (4s–6.1s) scroll 55%–100% -->
+          <div class="care-panel" id="care-p2">
+            <div class="care-eyebrow">Lasting Beauty</div>
+            <h2 class="care-panel-title">Glowing<br><em>Forever</em></h2>
+            <p class="care-desc">Glowstone's natural sheen and glow lasts a lifetime — because real beauty should never require maintenance to stay beautiful.</p>
+            <a href="#main-content" class="care-link care-link-right">Explore Care Guide<span class="care-link-bar"></span></a>
+          </div>
+
+          <div id="care-hint">
+            <div class="c-mouse"><div class="c-dot"></div></div>
+            <span>Scroll to explore</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ REST OF PAGE — all original content unchanged ══ -->
     <main id="main-content" role="main">
+
         <!-- How to Clean | Routine Care -->
         <section class="care-section" aria-labelledby="routine-heading">
             <div class="container">
@@ -206,28 +239,91 @@
             </div>
         </section>
 
-        <!-- Applications -->
+        <!-- Applications - Bento Grid Gallery -->
         <section class="care-section care-applications" aria-labelledby="applications-heading">
             <div class="container">
                 <h2 id="applications-heading" class="care-section-heading">Applications</h2>
                 <p class="care-applications-intro animate-on-scroll">Exquisite looks make Glowstone highly suitable for:</p>
-                <div class="care-applications-grid animate-on-scroll">
-                    <span class="care-app-item">Kitchen Counter-Top</span>
-                    <span class="care-app-item">Shelves</span>
-                    <span class="care-app-item">Table Top</span>
-                    <span class="care-app-item">Dining Table</span>
-                    <span class="care-app-item">Backsplash</span>
-                    <span class="care-app-item">Vanity Top</span>
-                    <span class="care-app-item">Wall Cladding</span>
-                    <span class="care-app-item">Flooring</span>
+                <div class="care-bento-grid animate-on-scroll" role="list">
+                    <article class="care-bento-card care-bento-kitchen" role="listitem">
+                        <a href="collection-domestic.html" class="care-bento-link">
+                            <img src="images/app-countertop.jpg" alt="Glowstone quartz kitchen countertop" width="600" height="400" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Kitchen Counter-Top</span>
+                                <p class="care-bento-desc">Premium quartz for worktops that resist stains, heat, and daily wear.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-shelves" role="listitem">
+                        <a href="collection-domestic-carrara-aurum.html" class="care-bento-link">
+                            <img src="images/collections/carrara-series/aurum/render.png" alt="Quartz shelves" width="400" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Shelves</span>
+                                <p class="care-bento-desc">Elegant display and storage surfaces.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-table" role="listitem">
+                        <a href="collection-domestic-onyx.html" class="care-bento-link">
+                            <img src="images/collections/onyx-series/crystal-ash/render.png" alt="Quartz table top" width="400" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Table Top</span>
+                                <p class="care-bento-desc">Durable, stylish surfaces for living spaces.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-dining" role="listitem">
+                        <a href="collection-domestic-calacatta-harmony-gold.html" class="care-bento-link">
+                            <img src="images/collections/calacatta-series/harmony-gold/render.png" alt="Quartz dining table" width="400" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Dining Table</span>
+                                <p class="care-bento-desc">Statement pieces for the heart of your home.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-backsplash" role="listitem">
+                        <a href="collection-domestic.html" class="care-bento-link">
+                            <img src="images/app-backsplash.jpg" alt="Quartz backsplash" width="400" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Backsplash</span>
+                                <p class="care-bento-desc">Seamless, easy-to-clean wall protection.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-vanity" role="listitem">
+                        <a href="collection-domestic-pastel-sage.html" class="care-bento-link">
+                            <img src="images/app-vanity.jpg" alt="Quartz vanity top" width="400" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Vanity Top</span>
+                                <p class="care-bento-desc">Bathroom surfaces that stay pristine.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-wall" role="listitem">
+                        <a href="collection-domestic.html" class="care-bento-link">
+                            <img src="images/app-wall.jpg" alt="Quartz wall cladding" width="400" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Wall Cladding</span>
+                                <p class="care-bento-desc">Transform walls with premium quartz.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="care-bento-card care-bento-flooring" role="listitem">
+                        <a href="collection-domestic-onyx-marigold.html" class="care-bento-link">
+                            <img src="images/collections/onyx-series/marigold/render.png" alt="Quartz flooring" width="600" height="300" loading="lazy">
+                            <div class="care-bento-overlay">
+                                <span class="care-bento-label">Flooring</span>
+                                <p class="care-bento-desc">Stunning, durable floors for any space.</p>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
         </section>
 
     </main>
 
-
-    <!-- Footer - Caesarstone-style: click + to expand -->
+    <!-- Footer -->
     <footer class="footer footer-expandable" id="main-footer">
         <button type="button" class="footer-toggle" id="footerToggle" aria-expanded="false" aria-controls="footerContent" aria-label="Expand footer menu">
             <div class="footer-toggle-inner container">
@@ -236,11 +332,11 @@
             </div>
         </button>
         <div class="footer-content" id="footerContent">
-        <div class="footer-content-inner">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-main">
-                    <div class="footer-brand">
+            <div class="footer-content-inner">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="footer-main">
+                            <div class="footer-brand">
                         <a href="index.html#home" class="footer-logo"><img src="logo-2.avif" alt="Glowstone - Premium Quartz Surfaces" width="100" height="42"></a>
                         <p class="footer-tagline">Recreating Dreams That Last</p>
                         <div class="footer-socials">
@@ -248,66 +344,136 @@
                                 <img src="images/social/instagram.svg" alt="Instagram" class="footer-social-icon" width="18" height="18" loading="lazy">
                             </a>
                             <a href="https://www.linkedin.com/company/glowstone" target="_blank" rel="noopener" class="footer-social" aria-label="Follow us on LinkedIn">
-                                <img src="images/social/linkedin.svg" alt="LinkedIn" class="footer-social-icon" width="18" height="18" loading="lazy">
+                                <img src="images/brand-inlogo-hero-fg-dsk-v01-2x.png" alt="LinkedIn" class="footer-social-icon" width="18" height="18" loading="lazy">
                             </a>
+                            </div>
+                            <div class="footer-links">
+                                <div class="footer-col"><h4>Our Collection</h4><ul><li><a href="collection-domestic.html">Domestic Collection</a></li><li><a href="collection-international.html">International Collection</a></li></ul></div>
+                                <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="our-story.html">Our Story</a></li><li><a href="projects.html">Projects</a></li></ul></div>
+                                <div class="footer-col"><h4>Support</h4><ul><li><a href="care-maintenance.html">Care &amp; Maintenance</a></li><li><a href="technical-specification.html">Technical Specification</a></li><li><a href="installation.html">Installation</a></li><li><a href="index.html#visualizer">Visualizer</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+                                <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Contact Us</a></li><li><a href="tel:+918306996722">+91-8306996722</a></li><li><a href="mailto:sales@glowstone.co.in">sales@glowstone.co.in</a></li></ul></div>
+                                <div class="footer-col"><h4>Visit Us</h4><ul><li>Office: J-11, Azad Nagar, Bhilwara - 311001</li><li>Factory: Village Baran, Banera, Bhilwara - 311401</li></ul></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-links">
-                        <div class="footer-col">
-                            <h4>Our Collection</h4>
-                            <ul>
-                                <li><a href="collection-domestic.html">Domestic Collection</a></li>
-                                <li><a href="collection-international.html">International Collection</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h4>Company</h4>
-                            <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="sustainability.html">Sustainability</a></li>
-                                <li><a href="our-story.html">Our Story</a></li>
-                                <li><a href="projects.html">Projects</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h4>Support</h4>
-                            <ul>
-                                <li><a href="care-maintenance.html">Care &amp; Maintenance</a></li>
-                                <li><a href="technical-specification.html">Technical Specification</a></li>
-                                <li><a href="installation.html">Installation</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="index.html#visualizer">Visualizer</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h4>Contact</h4>
-                            <ul>
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><a href="tel:+918306996722">+91-8306996722</a></li>
-                                <li><a href="mailto:sales@glowstone.co.in">sales@glowstone.co.in</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h4>Visit Us</h4>
-                            <ul>
-                                <li>Office: J-11, Azad Nagar, Bhilwara - 311001</li>
-                                <li>Factory: Village Baran, Banera, Bhilwara - 311401</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <p>&copy; Glowstone. All rights reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; Glowstone. All rights reserved.</p>
-            </div>
-        </div>
-        </div>
-        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js" defer></script>
+
+    <!-- Hero scroll scrub — identical logic to hero-section.html -->
+    <script>
+    (function(){
+      var hero   = document.getElementById('care-hero');
+      var video  = document.getElementById('care-video');
+      var hint   = document.getElementById('care-hint');
+      var bar    = document.getElementById('care-progress');
+      var panels = [
+        document.getElementById('care-p0'),
+        document.getElementById('care-p1'),
+        document.getElementById('care-p2')
+      ];
+
+      /*
+        Video is 6.1s — 3 panels matched to video moments:
+        Panel 0 → wine pouring         → 0s–2s   → scroll 0%–27%
+        Panel 1 → cloth wiping spill   → 2s–4s   → scroll 28%–54%
+        Panel 2 → clean swirl surface  → 4s–6.1s → scroll 55%–100%
+        [fadeInStart, fullyIn, startOut, fullyOut]
+      */
+      var ranges = [
+        [0.00, 0.04, 0.22, 0.27],
+        [0.28, 0.32, 0.49, 0.54],
+        [0.55, 0.59, 0.94, 1.00]
+      ];
+
+      function clamp(v,lo,hi){ return v<lo?lo:v>hi?hi:v; }
+      function norm(v,a,b)   { return clamp((v-a)/(b-a),0,1); }
+      function ease(t)        { return t*t*(3-2*t); }
+
+      function update(){
+        var scrolled = -hero.getBoundingClientRect().top;
+        var total    = hero.offsetHeight - window.innerHeight;
+        var p        = clamp(scrolled/total, 0, 1);
+
+        /* Scrub video */
+        if(video.duration && isFinite(video.duration)){
+          var target = p * video.duration;
+          if(Math.abs(video.currentTime - target) > 0.016){
+            video.currentTime = target;
+          }
+        }
+
+        /* Fade panels */
+        for(var i=0; i<panels.length; i++){
+          var r  = ranges[i];
+          var fi = ease(norm(p, r[0], r[1]));
+          var fo = 1 - ease(norm(p, r[2], r[3]));
+          var op = Math.min(fi, fo);
+          panels[i].style.opacity   = op;
+          panels[i].style.transform = 'translateY('+((1-op)*18)+'px)';
+        }
+
+        hint.style.opacity = p < 0.02 ? '1' : '0';
+        bar.style.width    = (p*100)+'%';
+      }
+
+      var scrollRaf = null;
+      function scheduleUpdate() {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(function() {
+          update();
+          scrollRaf = null;
+        });
+      }
+
+      /* Reduced motion: show first panel only, no scrub */
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        panels[0].style.opacity = '1';
+        panels[0].style.transform = 'translateY(0)';
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.play().catch(function() {});
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        update();
+        return;
+      }
+
+      /* Mobile: autoplay, scroll still updates progress bar */
+      if (window.innerWidth <= 767) {
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.play().catch(function() {});
+        panels[0].style.opacity = '1';
+        panels[0].style.transform = 'translateY(0)';
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        update();
+        return;
+      }
+
+      /* Desktop: init */
+      function init() {
+        video.currentTime = 0.001;
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate);
+        window.addEventListener('orientationchange', function() { setTimeout(scheduleUpdate, 150); });
+        update();
+      }
+
+      if (video.readyState >= 1) { init(); }
+      else { video.addEventListener('loadedmetadata', init); }
+
+    })();
+    </script>
 </body>
 </html>
