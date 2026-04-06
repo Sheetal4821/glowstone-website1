@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         // Detect first section: scroll-driven heroes (#gs-hero, #sus-hero, #care-hero, .inst-step) or page heroes (.about-hero, etc.)
-        var heroScrollSection = document.querySelector('#gs-hero, #sus-hero, #care-hero, .inst-step');
+        var heroScrollSection = document.querySelector('#gs-hero, #care-hero, .inst-step');
         var pageHero = document.querySelector('.about-hero, .contact-hero, .faq-hero, .tech-hero, .sh');
 
         function updateNavbarScroll() {
@@ -93,14 +93,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var footerToggle = document.getElementById('footerToggle');
     var footerExpandable = document.querySelector('.footer-expandable');
     if (footerToggle && footerExpandable) {
+        function footerNavOffset() {
+            var nav = document.querySelector('.navbar.fixed-top');
+            var h = nav ? Math.ceil(nav.getBoundingClientRect().height) : 72;
+            return h + 12;
+        }
+        function scrollExpandedFooterIntoView() {
+            var footer = document.getElementById('main-footer');
+            if (!footer) return;
+            var top = footer.getBoundingClientRect().top;
+            var offset = footerNavOffset();
+            var delta = top - offset;
+            if (Math.abs(delta) > 2) {
+                window.scrollBy({ top: delta, behavior: 'auto' });
+            }
+        }
         footerToggle.addEventListener('click', function() {
             var expanded = footerExpandable.classList.toggle('expanded');
             footerToggle.setAttribute('aria-expanded', expanded);
             if (expanded) {
-                var footer = document.getElementById('main-footer');
-                if (footer) {
-                    footer.scrollIntoView({ behavior: 'auto', block: 'end' });
-                }
+                requestAnimationFrame(function() {
+                    requestAnimationFrame(scrollExpandedFooterIntoView);
+                });
             }
         });
     }
@@ -221,19 +235,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Render Lightbox - click any product render to open full-size with slider
-    (function initRenderLightbox() {
-        var items = document.querySelectorAll('.product-render-item');
-        if (items.length === 0) return;
+    // Image lightbox (product renders + Care & Maintenance + product slab hero) — full size, prev/next carousel
+    (function initImageCarouselLightbox() {
+        var productItems = document.querySelectorAll('.product-render-item');
+        var careItems = document.querySelectorAll('.care-app-lightbox-item');
+        var slabImgs = document.querySelectorAll('.product-slab-image img');
+        if (productItems.length === 0 && careItems.length === 0 && slabImgs.length === 0) return;
 
         var lightbox = document.createElement('div');
         lightbox.className = 'render-lightbox';
         lightbox.setAttribute('role', 'dialog');
+        lightbox.setAttribute('aria-modal', 'true');
         lightbox.setAttribute('aria-label', 'Image gallery');
-        lightbox.innerHTML = '<button type="button" class="render-lightbox-close" aria-label="Close">&times;</button>' +
+        /* Content first so wide centered layer does not paint above nav buttons */
+        lightbox.innerHTML = '<div class="render-lightbox-content"></div>' +
+            '<button type="button" class="render-lightbox-close" aria-label="Close">&times;</button>' +
             '<button type="button" class="render-lightbox-prev" aria-label="Previous image">&lsaquo;</button>' +
             '<button type="button" class="render-lightbox-next" aria-label="Next image">&rsaquo;</button>' +
-            '<div class="render-lightbox-content"></div>' +
             '<span class="render-lightbox-counter"></span>';
         document.body.appendChild(lightbox);
 
@@ -245,12 +263,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var images = [];
         var currentIndex = 0;
+        var carouselWrap = false;
 
-        function openLightbox(index) {
+        function openLightbox(index, wrap) {
+            carouselWrap = !!wrap;
             currentIndex = index;
             updateLightbox();
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
+            closeBtn.focus();
         }
 
         function closeLightbox() {
@@ -261,24 +282,40 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateLightbox() {
             var img = images[currentIndex];
             if (!img) return;
-            content.innerHTML = '<img src="' + img.src + '" alt="' + (img.alt || 'Render') + '">';
+            content.innerHTML = '';
+            var full = document.createElement('img');
+            full.src = img.src;
+            full.alt = img.alt || 'Image';
+            content.appendChild(full);
             counter.textContent = (currentIndex + 1) + ' / ' + images.length;
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex === images.length - 1;
+            var multi = images.length > 1;
+            if (carouselWrap) {
+                prevBtn.disabled = !multi;
+                nextBtn.disabled = !multi;
+            } else {
+                prevBtn.disabled = !multi || currentIndex === 0;
+                nextBtn.disabled = !multi || currentIndex === images.length - 1;
+            }
         }
 
         function goPrev() {
-            if (currentIndex > 0) {
+            if (images.length <= 1) return;
+            if (carouselWrap) {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+            } else if (currentIndex > 0) {
                 currentIndex--;
-                updateLightbox();
             }
+            updateLightbox();
         }
 
         function goNext() {
-            if (currentIndex < images.length - 1) {
+            if (images.length <= 1) return;
+            if (carouselWrap) {
+                currentIndex = (currentIndex + 1) % images.length;
+            } else if (currentIndex < images.length - 1) {
                 currentIndex++;
-                updateLightbox();
             }
+            updateLightbox();
         }
 
         closeBtn.addEventListener('click', closeLightbox);
@@ -291,21 +328,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('keydown', function(e) {
             if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') goPrev();
-            if (e.key === 'ArrowRight') goNext();
-        });
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                e.stopPropagation();
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                e.stopPropagation();
+                goPrev();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                e.stopPropagation();
+                goNext();
+            }
+        }, true);
 
-        items.forEach(function(item, itemIndex) {
-            var img = item.querySelector('img');
-            if (!img) return;
-            item.addEventListener('click', function() {
-                var container = item.closest('.product-renders');
-                images = Array.from(container.querySelectorAll('.product-render-item img')).map(function(i) { return i; });
-                var idx = Array.from(container.querySelectorAll('.product-render-item')).indexOf(item);
-                openLightbox(idx >= 0 ? idx : 0);
+        function bindGroup(itemSelector, containerSelector, imgSelector, wrapCarousel) {
+            document.querySelectorAll(itemSelector).forEach(function(item) {
+                var img = item.querySelector('img');
+                if (!img) return;
+                item.addEventListener('click', function() {
+                    var container = item.closest(containerSelector);
+                    if (!container) return;
+                    images = Array.from(container.querySelectorAll(imgSelector)).map(function(i) { return i; });
+                    var triggers = Array.from(container.querySelectorAll(itemSelector));
+                    var idx = triggers.indexOf(item);
+                    openLightbox(idx >= 0 ? idx : 0, wrapCarousel);
+                });
             });
-        });
+        }
+
+        if (productItems.length) {
+            bindGroup('.product-render-item', '.product-renders', '.product-render-item img', false);
+        }
+        if (careItems.length) {
+            bindGroup('.care-app-lightbox-item', '.care-bento-grid', '.care-app-lightbox-item img', true);
+        }
+        if (slabImgs.length) {
+            slabImgs.forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var root = img.closest('.product-slab-image');
+                    if (!root) return;
+                    images = Array.from(root.querySelectorAll('img'));
+                    var idx = images.indexOf(img);
+                    openLightbox(idx >= 0 ? idx : 0, images.length > 1);
+                });
+                if (!img.closest('a')) {
+                    img.setAttribute('tabindex', '0');
+                    img.setAttribute('role', 'button');
+                    var baseAlt = img.getAttribute('alt') || 'Slab image';
+                    img.setAttribute('aria-label', baseAlt + ', view full size');
+                }
+                img.addEventListener('keydown', function(e) {
+                    if (e.key !== 'Enter' && e.key !== ' ') return;
+                    e.preventDefault();
+                    img.click();
+                });
+            });
+        }
     })();
 
 });

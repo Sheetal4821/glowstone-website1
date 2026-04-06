@@ -1,0 +1,148 @@
+{
+  "calacatta": {
+    "alabama": [
+      "images/collections/calacatta-series/alabama/slab.jpg",
+      "images/collections/calacatta-series/alabama/slab-2.jpg"
+    ],
+    "aspen-gold": [
+      "images/collections/calacatta-series/aspen-gold/slab.jpg",
+      "images/collections/calacatta-series/aspen-gold/slab-2.jpg"
+    ],
+    "aurika": [
+      "images/collections/calacatta-series/aurika/slab.jpg",
+      "images/collections/calacatta-series/aurika/slab-2.jpg"
+    ],
+    "avalanche": [
+      "images/collections/calacatta-series/avalanche/slab.jpg",
+      "images/collections/calacatta-series/avalanche/slab-2.jpg"
+    ],
+    "everest-grey": [
+      "images/collections/calacatta-series/everest-grey/slab.jpg",
+      "images/collections/calacatta-series/everest-grey/slab-2.jpg"
+    ],
+    "harmony-gold": [
+      "images/collections/calacatta-series/harmony-gold/slab.jpg",
+      "images/collections/calacatta-series/harmony-gold/slab-2.jpg"
+    ],
+    "marquina-noir": [
+      "images/collections/calacatta-series/marquina-noir/slab.jpg",
+      "images/collections/calacatta-series/marquina-noir/slab-2.jpg"
+    ],
+    "narina-gold": [
+      "images/collections/calacatta-series/narina-gold/slab.jpg",
+      "images/collections/calacatta-series/narina-gold/slab-2.jpg"
+    ],
+    "narina-grey": [
+      "images/collections/calacatta-series/narina-grey/slab.png"
+    ],
+    "nova": [
+      "images/collections/calacatta-series/nova/slab.jpg",
+      "images/collections/calacatta-series/nova/slab-2.jpg"
+    ],
+    "panda-white": [
+      "images/collections/calacatta-series/panda-white/slab.jpg",
+      "images/collections/calacatta-series/panda-white/slab-2.jpg"
+    ],
+    "perla-venata": [
+      "images/collections/calacatta-series/perla-venata/slab.jpg",
+      "images/collections/calacatta-series/perla-venata/slab-2.jpg"
+    ],
+    "sahara-noir": [
+      "images/collections/calacatta-series/sahara-noir/slab.jpg",
+      "images/collections/calacatta-series/sahara-noir/slab-2.jpg"
+    ],
+    "vienna": [
+      "images/collections/calacatta-series/vienna/slab.jpg",
+      "images/collections/calacatta-series/vienna/slab-2.jpg"
+    ]
+  },
+  "carrara": {
+    "aurum": [
+      "images/collections/carrara-series/aurum/slab.jpg",
+      "images/collections/carrara-series/aurum/slab-2.jpg"
+    ],
+    "bellagio": [
+      "images/collections/carrara-series/bellagio/slab.jpg"
+    ],
+    "bianco-nova": [
+      "images/collections/carrara-series/bianco-nova/slab.jpg",
+      "images/collections/carrara-series/bianco-nova/slab-2.jpg"
+    ],
+    "blaze": [
+      "images/collections/carrara-series/blaze/slab.jpg",
+      "images/collections/carrara-series/blaze/slab-2.jpg"
+    ],
+    "fossil": [
+      "images/collections/carrara-series/fossil/slab.jpg",
+      "images/collections/carrara-series/fossil/slab-2.jpg"
+    ],
+    "gold-mine": [
+      "images/collections/carrara-series/gold-mine/slab.jpg",
+      "images/collections/carrara-series/gold-mine/slab-2.jpg"
+    ],
+    "orion-white": [
+      "images/collections/carrara-series/orion-white/slab.jpg",
+      "images/collections/carrara-series/orion-white/slab-2.jpg"
+    ],
+    "rayon": [
+      "images/collections/carrara-series/rayon/slab.jpg"
+    ]
+  },
+  "onyx": {
+    "crystal-ash": [
+      "images/collections/onyx-series/crystal-ash/slab.jpg",
+      "images/collections/onyx-series/crystal-ash/slab-2.jpg",
+      "images/collections/onyx-series/crystal-ash/slab-3.jpg",
+      "images/collections/onyx-series/crystal-ash/slab-4.jpg"
+    ],
+    "luminous-gold": [
+      "images/collections/onyx-series/luminous-gold/slab.jpg",
+      "images/collections/onyx-series/luminous-gold/slab-2.jpg",
+      "images/collections/onyx-series/luminous-gold/slab-3.jpg",
+      "images/collections/onyx-series/luminous-gold/slab-4.jpg",
+      "images/collections/onyx-series/luminous-gold/slab-5.jpg"
+    ],
+    "marigold": [
+      "images/collections/onyx-series/marigold/slab.jpg",
+      "images/collections/onyx-series/marigold/slab-2.jpg",
+      "images/collections/onyx-series/marigold/slab-3.jpg"
+    ],
+    "nectar": [
+      "images/collections/onyx-series/nectar/slab.jpg",
+      "images/collections/onyx-series/nectar/slab-2.jpg",
+      "images/collections/onyx-series/nectar/slab-3.jpg"
+    ],
+    "trinity": [
+      "images/collections/onyx-series/trinity/slab.jpg",
+      "images/collections/onyx-series/trinity/slab-2.jpg",
+      "images/collections/onyx-series/trinity/slab-3.jpg"
+    ]
+  },
+  "pastel": {
+    "mauve": [
+      "images/collections/pastel-series/mauve/slab.jpg"
+    ],
+    "peony": [
+      "images/collections/pastel-series/peony/slab.jpg"
+    ],
+    "sage": [
+      "images/collections/pastel-series/sage/slab.jpg"
+    ],
+    "seafoam": [
+      "images/collections/pastel-series/seafoam/slab.jpg"
+    ]
+  },
+  "plain": {
+    "frost-white": [
+      "images/collections/plain-series/frost-white/slab.jpg",
+      "images/collections/plain-series/frost-white/slab-2.jpg"
+    ],
+    "glacier-white": [
+      "images/collections/plain-series/glacier-white/slab.jpg"
+    ],
+    "meraki": [
+      "images/collections/plain-series/meraki/slab.jpg",
+      "images/collections/plain-series/meraki/slab-2.jpg"
+    ]
+  }
+}

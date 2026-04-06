@@ -31,12 +31,15 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* Space below fixed navbar — avoids breadcrumb/title sitting under transparent nav */
+    padding-top: clamp(80px, 12vw, 108px);
+    box-sizing: border-box;
 }
 
 .tech-hero-bg {
     position: absolute;
     inset: 0;
-    background: url('../images/hero-bg.jpg') center/cover no-repeat;
+    background: #1a1a1a url('../images/DSCF0074.JPG') center 35% / cover no-repeat;
 }
 
 .tech-hero-bg::after {
@@ -79,18 +82,27 @@
     color: rgba(232, 228, 223, 0.7);
 }
 
+@media (max-width: 576px) {
+    .tech-breadcrumb {
+        font-size: 0.75rem;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
 .tech-hero-content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.15rem, 4.75vw, 3.2rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1rem;
     line-height: 1.2;
     animation: techFadeInUp 0.7s ease-out;
 }
 
 .tech-hero-text {
-    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    font-size: clamp(0.95rem, 1.45vw, 1.08rem);
     color: rgba(232, 228, 223, 0.9);
     line-height: 1.65;
     animation: techFadeInUp 0.7s ease-out 0.15s both;
@@ -113,7 +125,7 @@
 }
 
 .tech-section-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 600;
     color: #e8e4df;
@@ -128,7 +140,7 @@
     -webkit-overflow-scrolling: touch;
     border-radius: 12px;
     border: 1px solid rgba(201, 169, 98, 0.25);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(235, 228, 216, 0.03);
 }
 
 .tech-table {
@@ -143,7 +155,7 @@
 
 .tech-table th {
     padding: 1rem 1.25rem;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 600;
     color: #e8e4df;
@@ -157,7 +169,7 @@
 }
 
 .tech-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.04);
 }
 
 .tech-table tbody tr:last-child {
@@ -261,7 +273,7 @@
 }
 
 .tech-cta-content h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.6rem, 3vw, 2rem);
     font-weight: 600;
     color: #e8e4df;
@@ -292,7 +304,7 @@
 }
 
 .btn-tech:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--text-light);
     outline-offset: 2px;
 }
 
@@ -342,11 +354,11 @@
     }
 
     .tech-hero-content h1 {
-        font-size: 1.75rem;
+        font-size: 1.85rem;
     }
 
     .tech-hero-text {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .tech-section {
@@ -399,11 +411,11 @@
     }
 
     .tech-hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     .tech-hero-text {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .tech-section {
@@ -418,7 +430,7 @@
     .tech-table th,
     .tech-table td {
         padding: 0.6rem 0.65rem;
-        font-size: 0.7rem;
+        font-size: var(--text-caption);
     }
 
     .tech-table {

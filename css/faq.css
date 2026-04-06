@@ -21,40 +21,21 @@
     border: 0;
 }
 
-/* ===== Hero ===== */
+/* ===== Page header (no full-bleed photo — readable, fast) ===== */
 .faq-hero {
     position: relative;
-    min-height: 45vh;
-    min-height: 45dvh;
+    background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+    border-bottom: 1px solid rgba(201, 169, 98, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-}
-
-.faq-hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('../images/hero-bg.jpg') center/cover no-repeat;
-}
-
-.faq-hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(15, 15, 15, 0.5) 0%,
-        rgba(15, 15, 15, 0.75) 50%,
-        rgba(15, 15, 15, 0.95) 100%
-    );
+    padding: calc(4.5rem + env(safe-area-inset-top, 0px)) 0 2.75rem;
 }
 
 .faq-hero-content {
     position: relative;
-    z-index: 2;
     text-align: center;
-    padding: 2rem;
+    padding: 0 1.5rem;
     max-width: 700px;
 }
 
@@ -79,16 +60,16 @@
 }
 
 .faq-hero-content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.15rem, 4.75vw, 3.2rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 0.75rem;
     line-height: 1.2;
 }
 
 .faq-hero-text {
-    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    font-size: clamp(1rem, 1.55vw, 1.1rem);
     color: rgba(232, 228, 223, 0.9);
     line-height: 1.6;
 }
@@ -109,7 +90,7 @@
 }
 
 .faq-item:hover {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(235, 228, 216, 0.03);
 }
 
 .faq-item:last-child {
@@ -130,7 +111,7 @@
     background: transparent;
     border: none;
     color: #e8e4df;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.1rem, 2vw, 1.25rem);
     font-weight: 600;
     text-align: left;
@@ -233,15 +214,14 @@
 }
 
 .btn-faq:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--text-light);
     outline-offset: 2px;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .faq-hero {
-        min-height: 35vh;
-        padding-top: 70px;
+        padding: calc(4rem + env(safe-area-inset-top, 0px)) 0 2.25rem;
     }
 
     .faq-section {
@@ -264,7 +244,7 @@
     }
 
     .faq-hero-content h1 {
-        font-size: 1.75rem;
+        font-size: 1.85rem;
     }
 
     .faq-accordion {
@@ -274,7 +254,7 @@
 
 @media (max-width: 400px) {
     .faq-hero-content h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .faq-btn {
@@ -285,11 +265,11 @@
 
 @media (max-width: 360px) {
     .faq-hero {
-        min-height: 32vh;
+        padding: calc(3.5rem + env(safe-area-inset-top, 0px)) 0 2rem;
     }
 
     .faq-hero-content h1 {
-        font-size: 1.35rem;
+        font-size: 1.45rem;
     }
 
     .faq-section {

@@ -19,3 +19,6 @@ npm-debug.log*
 
 # Large video files (exceeds GitHub 100MB limit - host separately)
 video/
+
+# Local S3 deploy bundle (large; regenerate with your sync script)
+s3-upload/

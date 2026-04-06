@@ -9,6 +9,99 @@
     scroll-margin-top: 80px;
 }
 
+/* Notched devices: add safe-area to Bootstrap horizontal padding */
+.collection-product-section .container,
+.collection-series-section .container,
+.collection-section .container {
+    padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5 + env(safe-area-inset-left, 0px));
+    padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5 + env(safe-area-inset-right, 0px));
+}
+
+/* Domestic collection landing — hero focal point on luxury kitchen render */
+.collection-domestic-hero-bg {
+    background-position: center 38%;
+}
+
+@media (max-width: 768px) {
+    .collection-domestic-hero-bg {
+        background-position: center 45%;
+    }
+}
+
+/* Brochure downloads (e.g. domestic collection hub) */
+.collection-brochure-cta {
+    padding: 2.5rem 0 1rem;
+    border-top: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.collection-brochure-cta .container {
+    padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5 + env(safe-area-inset-left, 0px));
+    padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5 + env(safe-area-inset-right, 0px));
+}
+
+.collection-brochure-cta-inner {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.collection-brochure-cta-title {
+    font-family: var(--font-sans);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--navbar-accent);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.06em;
+}
+
+.collection-brochure-cta-lead {
+    font-size: 0.95rem;
+    color: rgba(232, 228, 223, 0.65);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.collection-brochure-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.collection-brochure-link {
+    display: inline-block;
+    padding: 0.65rem 1.35rem;
+    border: 1px solid rgba(201, 169, 98, 0.45);
+    color: var(--navbar-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.collection-brochure-link:hover {
+    background: rgba(201, 169, 98, 0.12);
+    border-color: var(--navbar-accent);
+    color: #f5f0ea;
+}
+
+.collection-brochure-link:focus-visible {
+    outline: 2px solid var(--navbar-accent);
+    outline-offset: 2px;
+}
+
+/* SKU pages: brochure sits inside existing section .container (no nested container) */
+.collection-brochure-cta--embed {
+    padding: 2rem 0 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(201, 169, 98, 0.15);
+}
+
+.collection-brochure-cta--embed .collection-brochure-cta-inner {
+    max-width: 720px;
+}
+
 /* ===== Collections Grid (Series Cards) ===== */
 .collection-hero {
     padding: 6rem 0 4rem;
@@ -17,7 +110,7 @@
 
 .collection-hero .section-label {
     display: block;
-    font-size: 0.8rem;
+    font-size: var(--text-small);
     font-weight: 500;
     letter-spacing: 0.25em;
     color: var(--navbar-accent);
@@ -25,10 +118,10 @@
 }
 
 .collection-hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.65rem, 5.25vw, 3.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 0.5rem;
 }
 
@@ -89,10 +182,10 @@
 }
 
 .series-card-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.75rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin: 0 0 0.5rem;
 }
 
@@ -119,7 +212,7 @@
 }
 
 .series-card-placeholder span {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.5rem;
     color: rgba(201, 169, 98, 0.5);
 }
@@ -132,18 +225,20 @@
 
 .series-page-header .section-label {
     display: block;
-    font-size: 0.8rem;
+    font-size: var(--text-small);
     font-weight: 500;
     letter-spacing: 0.25em;
     color: var(--navbar-accent);
     margin-bottom: 0.5rem;
 }
 
-.series-page-header h1 {
-    font-family: 'Cormorant Garamond', serif;
+.series-page-header h1,
+.series-page-header h2 {
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
+    margin: 0;
 }
 
 .products-grid {
@@ -156,7 +251,7 @@
 .product-card {
     border-radius: 12px;
     overflow: hidden;
-    background: rgba(255,255,255,0.03);
+    background: rgba(235, 228, 216, 0.04);
     border: 1px solid rgba(201, 169, 98, 0.15);
     transition: border-color 0.3s, transform 0.3s;
 }
@@ -176,6 +271,7 @@
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -198,7 +294,7 @@
 }
 
 .product-card-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.25rem;
     font-weight: 600;
     color: #e8e4df;
@@ -250,11 +346,13 @@
     margin-bottom: 1rem;
 }
 
-.product-page-header h1 {
-    font-family: 'Cormorant Garamond', serif;
+.product-page-header h1,
+.product-page-header h2 {
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
+    margin: 0;
 }
 
 .product-renders {
@@ -268,13 +366,15 @@
     border-radius: 8px;
     overflow: hidden;
     background: #1a1a1a;
+    aspect-ratio: 4 / 3;
 }
 
 .product-render-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 .product-render-placeholder {
@@ -304,15 +404,96 @@
     background: #1a1a1a;
 }
 
-.product-slab-image img {
+/*
+ * Slab photos: show full image (no crop). Frame follows natural aspect ratio; cap height for very large files.
+ * Lightbox (.render-lightbox-content img) still uses contain for full-screen view.
+ */
+.product-slab-image:has(> img:only-child) {
+    aspect-ratio: unset;
+    max-height: none;
+}
+
+.product-slab-image > img:only-child {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: min(92vh, 1400px);
+    min-height: 0;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    cursor: zoom-in;
+}
+
+.product-slab-image img:focus-visible {
+    outline: 2px solid var(--navbar-accent, #c9a962);
+    outline-offset: 3px;
+}
+
+/* Slab carousel: height follows the active slide’s image (no fixed aspect ratio, no cover crop) */
+.product-slab-image .carousel {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+    width: 100%;
+    aspect-ratio: unset;
+    max-height: none;
+}
+
+.product-slab-image .carousel-inner {
+    height: auto;
+    min-height: 0;
+    background: #1a1a1a;
+}
+
+.product-slab-image .carousel .carousel-item {
+    float: none;
+    margin-right: 0;
     width: 100%;
     height: auto;
+    min-height: 0;
+}
+
+.product-slab-image .carousel-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: min(92vh, 1400px);
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    cursor: zoom-in;
+}
+
+.product-slab-image .carousel-indicators {
+    margin-bottom: 0.35rem;
+}
+
+.product-slab-image .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(232, 228, 223, 0.45);
+}
+
+.product-slab-image .carousel-indicators .active {
+    background-color: var(--navbar-accent);
+}
+
+.product-slab-image .carousel-control-prev,
+.product-slab-image .carousel-control-next {
+    width: 12%;
+    opacity: 0.9;
+}
+
+.product-slab-image .carousel-control-prev-icon,
+.product-slab-image .carousel-control-next-icon {
+    filter: invert(1) drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
 }
 
 .product-content h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.5rem;
     font-weight: 600;
     color: #e8e4df;
@@ -330,8 +511,53 @@
     margin-bottom: 0;
 }
 
+/* Description, thickness, size (product detail list) */
+.product-facts {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.product-fact {
+    margin: 0;
+    padding: 0 0 1.25rem;
+    border-bottom: 1px solid rgba(201, 169, 98, 0.12);
+}
+
+.product-fact:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.product-fact dt {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navbar-accent);
+    margin-bottom: 0.5rem;
+}
+
+.product-fact dd {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(232, 228, 223, 0.88);
+}
+
+.product-description p {
+    margin-bottom: 0.85rem;
+}
+
+.product-description p:last-child {
+    margin-bottom: 0;
+}
+
 .product-renders-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.35rem;
     font-weight: 600;
     color: #e8e4df;
@@ -489,7 +715,7 @@
     background: rgba(0, 0, 0, 0.95);
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: max(2rem, env(safe-area-inset-top, 0px)) max(2rem, env(safe-area-inset-right, 0px)) max(2rem, env(safe-area-inset-bottom, 0px)) max(2rem, env(safe-area-inset-left, 0px));
 }
 
 .render-lightbox.active {
@@ -498,13 +724,14 @@
 
 .render-lightbox-close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    z-index: 2;
+    top: max(1.5rem, env(safe-area-inset-top, 0px));
+    right: max(1.5rem, env(safe-area-inset-right, 0px));
     width: 48px;
     height: 48px;
     border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background: rgba(235, 228, 216, 0.12);
+    color: var(--text-light);
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 50%;
@@ -515,7 +742,7 @@
 }
 
 .render-lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(235, 228, 216, 0.22);
 }
 
 .render-lightbox-prev,
@@ -526,8 +753,8 @@
     width: 56px;
     height: 56px;
     border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background: rgba(235, 228, 216, 0.12);
+    color: var(--text-light);
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 50%;
@@ -537,12 +764,12 @@
     transition: background 0.2s;
 }
 
-.render-lightbox-prev { left: 1rem; }
-.render-lightbox-next { right: 1rem; }
+.render-lightbox-prev { left: max(1rem, env(safe-area-inset-left, 0px)); }
+.render-lightbox-next { right: max(1rem, env(safe-area-inset-right, 0px)); }
 
 .render-lightbox-prev:hover,
 .render-lightbox-next:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(235, 228, 216, 0.28);
 }
 
 .render-lightbox-prev:disabled,
@@ -552,6 +779,8 @@
 }
 
 .render-lightbox-content {
+    position: relative;
+    z-index: 0;
     max-width: 95vw;
     max-height: 90vh;
     display: flex;
@@ -559,20 +788,23 @@
     justify-content: center;
 }
 
+/* Full source image in overlay (no crop); previews above use object-fit: cover only in-page */
 .render-lightbox-content img {
     max-width: 100%;
     max-height: 90vh;
     width: auto;
     height: auto;
     object-fit: contain;
+    object-position: center;
 }
 
 .render-lightbox-counter {
     position: absolute;
+    z-index: 2;
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(235, 228, 216, 0.88);
     font-size: 0.95rem;
 }
 

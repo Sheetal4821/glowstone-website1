@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Demo / internal template (optional to disallow)
+# Disallow: /sample-product-pinterest-style.html
+
+Sitemap: https://www.glowstone.co.in/sitemap.xml

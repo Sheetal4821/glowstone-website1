@@ -6,6 +6,17 @@
     --navbar-text: #e8e4df;
     --navbar-accent: #c9a962;
     --navbar-hover: rgba(201, 169, 98, 0.2);
+    /* Replaces pure #fff on dark UI — warm quartz cream */
+    --text-light: #ebe4d8;
+    --surface-elevated: #f5f0ea;
+    /* Metropolis sitewide (SIL OFL) */
+    --font-sans: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 1.0625rem;
+    /* Type scale (rem × browser root, typically 16px) — keep UI text ≥ --text-micro where possible */
+    --text-micro: 0.6875rem;   /* 11px — smallest readable small caps */
+    --text-caption: 0.75rem;   /* 12px */
+    --text-small: 0.8125rem;   /* 13px */
+    --text-lead: 1.125rem;     /* 18px — intro / hero subcopy max comfort */
 }
 
 * {
@@ -40,17 +51,22 @@ img {
 
 .skip-link:focus {
     top: 1rem;
-    outline: 2px solid #fff;
+    outline: 2px solid var(--text-light);
     outline-offset: 2px;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
     background: #0f0f0f;
     color: #e8e4df;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
 }
 
 #home.hero {
@@ -102,7 +118,7 @@ html {
 }
 
 .navbar-logo {
-    height: 45px;
+    height: 54px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -110,13 +126,13 @@ html {
 
 @media (max-width: 575.98px) {
     .navbar-logo {
-        height: 38px;
+        height: 46px;
     }
 }
 
 .nav-link {
     color: var(--navbar-text) !important;
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    font-size: clamp(0.85rem, 1.55vw, 0.95rem);
     font-weight: 500;
     letter-spacing: 0.05em;
     padding: 0.5rem 0.75rem !important;
@@ -209,20 +225,32 @@ html {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(232, 228, 223, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Large screens (992px+) - Full horizontal nav */
+/* Large screens (992px+) - Full horizontal nav (nowrap keeps e.g. Contact Us on same row) */
 @media (min-width: 992px) {
     .navbar {
         padding: 1rem 0;
     }
 
     .navbar-nav {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: flex-end;
-        gap: 0.25rem;
+        align-items: center;
+        gap: 0;
     }
+}
 
-    .nav-link {
-        padding: 0.5rem 1rem !important;
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.45rem !important;
+        letter-spacing: 0.03em;
+        font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.7rem !important;
+        letter-spacing: 0.04em;
     }
 }
 
@@ -246,7 +274,7 @@ html {
         min-height: 44px;
         display: flex;
         align-items: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(235, 228, 216, 0.06);
     }
 
     .nav-link:last-child {
@@ -327,7 +355,7 @@ html {
 /* Very small screens (320px) - ensure navbar fits */
 @media (max-width: 360px) {
     .navbar-logo {
-        height: 34px;
+        height: 42px;
     }
 
     .navbar .container {
@@ -480,20 +508,20 @@ html {
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.25rem, 5.5vw, 4rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.4rem, 5.8vw, 4.25rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1.25rem;
     line-height: 1.15;
     letter-spacing: 0.02em;
 }
 
 .hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    font-family: var(--font-sans);
+    font-size: clamp(1.05rem, 2.35vw, 1.42rem);
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(235, 228, 216, 0.95);
     margin-bottom: 2.5rem;
     letter-spacing: 0.08em;
 }
@@ -502,17 +530,17 @@ html {
     display: inline-block;
     padding: 1rem 2.5rem;
     background: transparent;
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.15em;
-    border: 2px solid #fff;
+    border: 2px solid var(--text-light);
     transition: all 0.3s ease;
 }
 
 .btn-hero:hover {
-    background: #fff;
+    background: var(--surface-elevated);
     color: #0f0f0f;
 }
 
@@ -544,10 +572,10 @@ html {
 }
 
 .feature-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.75rem, 2.5vw, 2.25rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 0.75rem;
     line-height: 1.2;
 }
@@ -596,7 +624,7 @@ html {
 
 .stat-number {
     display: block;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 600;
     color: var(--navbar-accent);
@@ -637,10 +665,10 @@ html {
 }
 
 .section-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
 }
 
 .magic-quartz-visual {
@@ -662,7 +690,7 @@ html {
 }
 
 .magic-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.04);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     padding: 2rem;
@@ -704,7 +732,10 @@ html {
 }
 
 .why-love-item {
-    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(235, 228, 216, 0.04);
     border: 1px solid rgba(201, 169, 98, 0.15);
     border-radius: 6px;
     padding: 1.25rem 1.5rem;
@@ -768,10 +799,10 @@ html {
 }
 
 .collection-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4.5vw, 3rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.2;
     letter-spacing: 0.02em;
@@ -811,16 +842,29 @@ html {
     --bs-gutter-x: 3rem;
 }
 
+/* Mission: image column stretches to match text column height (lg+); image fills with cover */
+.our-story-image-col {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
 .our-story-image {
     border-radius: 8px;
     overflow: hidden;
+    flex: 1 1 auto;
+    display: flex;
+    min-height: 280px;
 }
 
 .our-story-image img {
     width: 100%;
     height: 100%;
+    min-height: 0;
     object-fit: cover;
-    min-height: 400px;
+    object-position: center;
+    display: block;
 }
 
 .our-story-content .section-label {
@@ -843,10 +887,10 @@ html {
 }
 
 .our-story-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
@@ -862,6 +906,24 @@ html {
     color: var(--navbar-accent) !important;
     font-weight: 500;
     margin-bottom: 0 !important;
+}
+
+/* Home page: Mission block — ABOUT US, heading, and body centered */
+.our-story--home-mission .row > .col-lg-6:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.our-story--home-mission .our-story-content {
+    text-align: center;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.our-story--home-mission .our-story-content .section-label::after {
+    margin: 1rem auto 0;
 }
 
 /* Our Vision Section - Eternal, Pacific, Caesarstone inspired */
@@ -897,10 +959,10 @@ html {
 }
 
 .vision-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
 }
 
@@ -948,6 +1010,19 @@ html {
     min-height: 400px;
 }
 
+/* Home page: Vision copy centered (matches Mission treatment) */
+.vision-section--home .vision-content {
+    text-align: center;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+}
+
+.vision-section--home .vision-content .section-label::after {
+    margin: 1rem auto 0;
+}
+
 @media (max-width: 991.98px) {
     .vision-wrapper {
         grid-template-columns: 1fr;
@@ -978,8 +1053,14 @@ html {
         flex-direction: column-reverse;
     }
 
+    .our-story-image {
+        min-height: min(360px, 50vw);
+        max-height: 420px;
+        flex: 0 0 auto;
+    }
+
     .our-story-image img {
-        min-height: 300px;
+        min-height: 280px;
     }
 }
 
@@ -988,8 +1069,13 @@ html {
         padding: 4rem 0;
     }
 
+    .our-story-image {
+        min-height: min(280px, 55vw);
+        max-height: 340px;
+    }
+
     .our-story-image img {
-        min-height: 250px;
+        min-height: 220px;
     }
 }
 
@@ -1019,10 +1105,10 @@ html {
 .app-label {
     position: relative;
     z-index: 2;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     letter-spacing: 0.08em;
     transition: opacity 0.4s ease;
 }
@@ -1131,10 +1217,10 @@ html {
 }
 
 .brochure-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
@@ -1206,10 +1292,10 @@ html {
 }
 
 .contact-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     text-align: center;
     margin-bottom: 2.5rem;
     line-height: 1.3;
@@ -1249,9 +1335,9 @@ html {
     width: 100%;
     min-width: 0;
     padding: 0.875rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(235, 228, 216, 0.06);
     border: 1px solid rgba(201, 169, 98, 0.3);
-    color: #fff;
+    color: var(--text-light);
     font-size: 1rem;
     font-family: inherit;
     color-scheme: dark;
@@ -1327,6 +1413,11 @@ html {
     background: #0a0a0a;
 }
 
+/* Clear fixed navbar when scrolling footer into view */
+#main-footer.footer-expandable {
+    scroll-margin-top: max(72px, calc(60px + env(safe-area-inset-top, 0px)));
+}
+
 .footer-expandable {
     display: flex;
     flex-direction: column-reverse;
@@ -1397,7 +1488,7 @@ html {
     font-size: 1.35rem;
     font-weight: 300;
     line-height: 1;
-    transition: transform 0.2s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 576px) {
@@ -1414,25 +1505,24 @@ html {
     background: rgba(20, 20, 20, 0.98);
 }
 
-/* Instant expand/collapse - no animation delay */
+/* Instant expand/collapse — max-height avoids 0fr/1fr clipping inside flex column-reverse */
 .footer-content {
-    display: grid;
-    grid-template-rows: 0fr;
+    max-height: 0;
+    overflow: hidden;
     transition: none;
 }
 
 .footer-expandable.expanded .footer-content {
-    grid-template-rows: 1fr;
+    max-height: min(320vh, 2800px);
 }
 
 .footer-content-inner {
     min-height: 0;
-    overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .footer-content {
-        transition: none;
+    .footer-expandable.expanded .footer-content {
+        max-height: none;
     }
     .footer-toggle-icon {
         transition-duration: 0.15s;
@@ -1537,7 +1627,7 @@ html {
 }
 
 .footer-tagline {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--navbar-accent);
@@ -1573,6 +1663,7 @@ html {
     flex-shrink: 0;
     width: 18px;
     height: 18px;
+    object-fit: contain;
 }
 
 .footer-links {
@@ -1596,7 +1687,7 @@ html {
 }
 
 .footer-col h4 {
-    font-size: 0.65rem;
+    font-size: var(--text-micro);
     font-weight: 600;
     letter-spacing: 0.14em;
     color: var(--navbar-accent);
@@ -1606,14 +1697,14 @@ html {
 
 @media (min-width: 576px) {
     .footer-col h4 {
-        font-size: 0.68rem;
+        font-size: 0.72rem;
         margin-bottom: 0.65rem;
     }
 }
 
 @media (min-width: 992px) {
     .footer-col h4 {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         margin-bottom: 0.75rem;
     }
 }
@@ -1626,39 +1717,39 @@ html {
 
 .footer-col li {
     margin-bottom: 0.3rem;
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
     color: rgba(232, 228, 223, 0.75);
     line-height: 1.5;
 }
 
 @media (min-width: 576px) {
     .footer-col li {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
     }
 }
 
 @media (min-width: 992px) {
     .footer-col li {
-        font-size: 0.8rem;
+        font-size: 0.825rem;
     }
 }
 
 .footer-col a {
     color: rgba(232, 228, 223, 0.8);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: var(--text-caption);
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 576px) {
     .footer-col a {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
     }
 }
 
 @media (min-width: 992px) {
     .footer-col a {
-        font-size: 0.8rem;
+        font-size: 0.825rem;
     }
 }
 
@@ -1669,7 +1760,7 @@ html {
 .footer-bottom {
     padding: 0.75rem 0;
     background: rgba(0, 0, 0, 0.4);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(235, 228, 216, 0.06);
 }
 
 @media (min-width: 576px) {
@@ -1695,20 +1786,20 @@ html {
 }
 
 .footer-bottom p {
-    font-size: 0.7rem;
+    font-size: var(--text-micro);
     color: rgba(232, 228, 223, 0.45);
     margin: 0;
 }
 
 @media (min-width: 576px) {
     .footer-bottom p {
-        font-size: 0.72rem;
+        font-size: 0.74rem;
     }
 }
 
 @media (min-width: 992px) {
     .footer-bottom p {
-        font-size: 0.75rem;
+        font-size: 0.78rem;
     }
 }
 

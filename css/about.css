@@ -32,6 +32,7 @@
 .about-hero-video {
     position: absolute;
     inset: 0;
+    background-color: #0f0f0f; /* no poster image — solid fill until video fades in */
 }
 
 .about-hero-video video {
@@ -72,18 +73,18 @@
     max-width: 900px;
 }
 
-.about-hero-content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+.about-hero-content h1:not(.visually-hidden) {
+    font-family: var(--font-sans);
+    font-size: clamp(2.65rem, 6.2vw, 4.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1rem;
     line-height: 1.1;
     letter-spacing: 0.02em;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
 
-.about-hero-content h1::after {
+.about-hero-content h1:not(.visually-hidden)::after {
     content: '';
     display: block;
     width: 0;
@@ -98,10 +99,10 @@
 }
 
 .about-hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1rem, 2.2vw, 1.35rem);
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(235, 228, 216, 0.95);
     letter-spacing: 0.08em;
     animation: fadeInUp 1s ease-out 0.5s both;
 }
@@ -146,12 +147,15 @@
 }
 
 .about-breadcrumb span {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(235, 228, 216, 0.62);
 }
 
 @media (max-width: 576px) {
     .about-breadcrumb {
         font-size: 0.8rem;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 }
 
@@ -185,10 +189,10 @@
 }
 
 .about-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     line-height: 1.2;
 }
 
@@ -220,6 +224,27 @@
 
 .about-content p:last-child {
     margin-bottom: 0;
+}
+
+/* About page — “About Glowstone” intro: centered copy + balanced image */
+.about-intro-centered .about-content {
+    text-align: center;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-intro-centered .about-intro-centered-row > .col-lg-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-intro-centered .about-image {
+    width: 100%;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-image {
@@ -284,10 +309,10 @@
 }
 
 .about-banner-content h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
@@ -314,7 +339,7 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1.25rem 1rem;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(235, 228, 216, 0.04);
     border: 1px solid rgba(201, 169, 98, 0.25);
     border-radius: 10px;
 }
@@ -384,7 +409,7 @@
 .benefit-card {
     text-align: center;
     padding: 2rem 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     transition: border-color 0.3s ease, transform 0.3s ease;
@@ -419,10 +444,10 @@
 }
 
 .benefit-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.35rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 0.75rem;
 }
 
@@ -463,7 +488,7 @@
 
 .gallery-item {
     padding: 0.5rem;
-    background: #fff;
+    background: var(--surface-elevated);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -498,7 +523,7 @@
     grid-template-columns: 120px 1fr;
     gap: 2rem;
     padding: 2rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(235, 228, 216, 0.08);
     opacity: 0;
     transform: translateX(-30px);
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
@@ -518,7 +543,7 @@
 }
 
 .timeline-year {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 2rem;
     font-weight: 600;
     color: var(--navbar-accent);
@@ -526,10 +551,10 @@
 }
 
 .timeline-content h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.35rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 0.75rem;
 }
 
@@ -554,7 +579,7 @@
 .value-card {
     text-align: center;
     padding: 2.5rem 2rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -584,23 +609,23 @@
     }
 
     .about-cta-content .btn-hero:hover {
-        background: #fff;
+        background: var(--surface-elevated);
         color: #0f0f0f;
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 25px rgba(245, 240, 234, 0.35);
     }
 }
 
 @media (hover: none) {
     .about-cta-content .btn-hero:active {
-        background: #fff;
+        background: var(--surface-elevated);
         color: #0f0f0f;
     }
 }
 
 .value-number {
     display: block;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 3rem;
     font-weight: 600;
     color: var(--navbar-accent);
@@ -609,10 +634,10 @@
 }
 
 .value-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.35rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 0.5rem;
 }
 
@@ -635,10 +660,10 @@
 }
 
 .about-cta-content h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
@@ -653,12 +678,12 @@
     display: inline-block;
     padding: 1rem 2.5rem;
     background: transparent;
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.15em;
-    border: 2px solid #fff;
+    border: 2px solid var(--text-light);
     transition: all 0.4s ease;
 }
 
@@ -730,7 +755,7 @@
         padding: 1.5rem 1rem;
     }
 
-    .about-hero-content h1 {
+    .about-hero-content h1:not(.visually-hidden) {
         font-size: clamp(1.75rem, 5vw, 2rem);
     }
 
@@ -788,11 +813,11 @@
         padding-top: 65px;
     }
 
-    .about-hero-content h1 {
+    .about-hero-content h1:not(.visually-hidden) {
         font-size: 1.5rem;
     }
 
-    .about-hero-content h1::after {
+    .about-hero-content h1:not(.visually-hidden)::after {
         margin-top: 0.75rem;
     }
 
@@ -880,7 +905,7 @@
 
 /* Specs cards - slab sizes & thickness */
 .about-specs-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     padding: 2rem;
@@ -904,7 +929,7 @@
     font-size: 1rem;
     color: rgba(232, 228, 223, 0.9);
     padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(235, 228, 216, 0.06);
 }
 
 .about-specs-card li:last-child {
@@ -925,7 +950,7 @@
 /* Explore cards (About sub-pages links) */
 .about-explore-card {
     display: block;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     padding: 2rem;
@@ -936,7 +961,7 @@
 
 .about-explore-card:hover {
     border-color: rgba(201, 169, 98, 0.5);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(235, 228, 216, 0.05);
 }
 
 @media (max-width: 575.98px) {
@@ -979,7 +1004,7 @@
 }
 
 .about-subheading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--navbar-accent);
@@ -996,7 +1021,7 @@
     font-size: 0.95rem;
     color: rgba(232, 228, 223, 0.9);
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(235, 228, 216, 0.06);
 }
 
 .about-projects-list li:last-child {
@@ -1028,7 +1053,7 @@
 }
 
 .country-tag {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(235, 228, 216, 0.05);
     border: 1px solid rgba(201, 169, 98, 0.3);
     padding: 0.5rem 1.25rem;
     font-size: 0.9rem;
@@ -1044,7 +1069,7 @@
 }
 
 .swot-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     padding: 2rem;
@@ -1082,10 +1107,15 @@
     overflow: hidden;
 }
 
+/* Light background: heading was white (for dark sections) — switch to charcoal */
+.gr-section .about-heading {
+    color: #1a1918;
+}
+
 .gr-subtitle {
-    font-family: 'Jost', sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.88rem;
-    color: rgba(13, 12, 11, 0.5);
+    color: rgba(26, 25, 24, 0.72);
     margin-top: 0.3rem;
     font-weight: 300;
 }
@@ -1125,7 +1155,7 @@
     position: relative;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(235, 228, 216, 0.6);
 }
 
 .gr-map-img {
@@ -1138,7 +1168,7 @@
     position: absolute;
     inset: 0;
     border-radius: 14px;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 65%);
+    background: radial-gradient(circle at 50% 50%, rgba(235, 228, 216, 0.18) 0%, transparent 65%);
     pointer-events: none;
     transition: background 0.1s ease;
     z-index: 5;
@@ -1167,7 +1197,7 @@
     inset: 0;
     background: #c9a84c;
     border-radius: 50%;
-    border: 1.5px solid #fff;
+    border: 1.5px solid var(--text-light);
     box-shadow: 0 2px 6px rgba(201, 168, 76, 0.6);
     z-index: 2;
     transition: background 0.2s, transform 0.2s;
@@ -1210,8 +1240,8 @@
     position: absolute;
     background: #0d0c0b;
     color: #f5f0ea;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.68rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-caption);
     letter-spacing: 0.08em;
     padding: 4px 10px;
     border-radius: 4px;
@@ -1251,7 +1281,7 @@
 }
 
 .gr-tag {
-    font-family: 'Jost', sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 300;
     letter-spacing: 0.05em;
@@ -1259,7 +1289,7 @@
     border: 1px solid rgba(201, 168, 76, 0.3);
     border-radius: 100px;
     color: #0d0c0b;
-    background: #fff;
+    background: var(--surface-elevated);
     cursor: pointer;
     transition: all 0.25s ease;
     opacity: 0;
@@ -1277,7 +1307,7 @@
 .gr-tag.active {
     background: #c9a84c;
     border-color: #c9a84c;
-    color: #fff;
+    color: #0d0c0b;
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
 }
@@ -1314,7 +1344,7 @@
         inset: -3px;
     }
     .gr-tag {
-        font-size: 0.68rem;
+        font-size: var(--text-caption);
         padding: 0.28rem 0.75rem;
     }
     .gr-shine {
@@ -1331,7 +1361,7 @@
         inset: -3px;
     }
     .gr-tag {
-        font-size: 0.65rem;
+        font-size: var(--text-micro);
         padding: 0.25rem 0.65rem;
     }
 }
@@ -1342,19 +1372,19 @@
         padding: 0 0.75rem;
     }
     .gr-tag {
-        font-size: 0.6rem;
+        font-size: var(--text-micro);
         padding: 0.22rem 0.5rem;
     }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    .about-hero-content h1,
+    .about-hero-content h1:not(.visually-hidden),
     .about-hero-subtitle {
         animation: none;
     }
 
-    .about-hero-content h1::after {
+    .about-hero-content h1:not(.visually-hidden)::after {
         animation: none;
         width: 80px;
     }

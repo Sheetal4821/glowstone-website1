@@ -17,44 +17,26 @@
 }
 
 /* Scroll offset for fixed navbar */
-.contact-section {
-    scroll-margin-top: 70px;
+.contact-section,
+#main-content {
+    scroll-margin-top: clamp(70px, 10vw, 90px);
 }
 
-/* ===== Hero ===== */
+/* ===== Hero (matches FAQ page header) ===== */
 .contact-hero {
     position: relative;
-    min-height: 55vh;
-    min-height: 55dvh;
+    background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+    border-bottom: 1px solid rgba(201, 169, 98, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-}
-
-.contact-hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('../images/hero-bg.jpg') center/cover no-repeat;
-}
-
-.contact-hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(15, 15, 15, 0.5) 0%,
-        rgba(15, 15, 15, 0.75) 50%,
-        rgba(15, 15, 15, 0.95) 100%
-    );
+    padding: calc(4.5rem + env(safe-area-inset-top, 0px)) 0 2.75rem;
 }
 
 .contact-hero-content {
     position: relative;
-    z-index: 2;
     text-align: center;
-    padding: 2rem;
+    padding: 0 1.5rem;
     max-width: 700px;
 }
 
@@ -79,32 +61,18 @@
 }
 
 .contact-hero-content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.15rem, 4.75vw, 3.2rem);
     font-weight: 600;
-    color: #fff;
-    margin-bottom: 1rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
     line-height: 1.2;
-    letter-spacing: 0.02em;
-    animation: contactFadeInUp 0.8s ease-out;
 }
 
 .contact-hero-text {
-    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-size: clamp(1rem, 1.55vw, 1.1rem);
     color: rgba(232, 228, 223, 0.9);
     line-height: 1.6;
-    animation: contactFadeInUp 0.8s ease-out 0.2s both;
-}
-
-@keyframes contactFadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* ===== Contact Section ===== */
@@ -121,14 +89,14 @@
 
 /* Form */
 .contact-form-wrapper {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 12px;
     padding: 2rem;
 }
 
 .contact-form-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.75rem;
     font-weight: 600;
     color: #e8e4df;
@@ -173,9 +141,9 @@
 .contact-form textarea {
     width: 100%;
     padding: 0.875rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(235, 228, 216, 0.06);
     border: 1px solid rgba(201, 169, 98, 0.3);
-    color: #fff;
+    color: var(--text-light);
     font-size: 1rem;
     font-family: inherit;
     color-scheme: dark;
@@ -240,7 +208,7 @@
 }
 
 .contact-form .btn-submit:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--text-light);
     outline-offset: 2px;
 }
 
@@ -256,7 +224,7 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 169, 98, 0.15);
     border-radius: 8px;
     transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
@@ -264,7 +232,7 @@
 
 .contact-info-card:hover {
     border-color: rgba(201, 169, 98, 0.35);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(235, 228, 216, 0.05);
     transform: translateX(4px);
 }
 
@@ -286,7 +254,7 @@
 }
 
 .contact-info-card h4 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 600;
     color: #e8e4df;
@@ -311,12 +279,16 @@
     color: var(--navbar-accent);
 }
 
+.contact-info-card address {
+    margin-bottom: 0.875rem;
+}
+
 /* Location buttons - Get Directions */
 .btn-location {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     background: rgba(201, 169, 98, 0.15);
     border: 1px solid rgba(201, 169, 98, 0.4);
@@ -355,7 +327,7 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(235, 228, 216, 0.04);
     border: 1px solid rgba(201, 169, 98, 0.2);
     border-radius: 8px;
     color: #e8e4df;
@@ -366,13 +338,16 @@
 
 .contact-social:hover {
     border-color: rgba(201, 169, 98, 0.4);
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(235, 228, 216, 0.08);
     transform: translateY(-2px);
     color: #e8e4df;
 }
 
 .contact-social-icon {
     flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 /* ===== Responsive ===== */
@@ -393,12 +368,7 @@
 
 @media (max-width: 768px) {
     .contact-hero {
-        min-height: 45vh;
-        padding-top: 70px;
-    }
-
-    .contact-hero-content {
-        padding: 1.5rem;
+        padding: calc(4rem + env(safe-area-inset-top, 0px)) 0 2.25rem;
     }
 
     .contact-section {
@@ -419,20 +389,12 @@
 }
 
 @media (max-width: 576px) {
-    .contact-hero {
-        min-height: 40vh;
-    }
-
     .contact-hero-content {
         padding: 1rem;
     }
 
     .contact-hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .contact-hero-text {
-        font-size: 0.9rem;
+        font-size: 1.85rem;
     }
 
     .contact-section {
@@ -478,7 +440,7 @@
 
 @media (max-width: 400px) {
     .contact-hero-content h1 {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
     }
 
     .contact-form-wrapper {
@@ -497,9 +459,21 @@
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .contact-hero-content h1,
-    .contact-hero-text {
-        animation: none;
+@media (max-width: 360px) {
+    .contact-hero {
+        padding: calc(3.5rem + env(safe-area-inset-top, 0px)) 0 2rem;
+    }
+
+    .contact-hero-content h1 {
+        font-size: 1.45rem;
+    }
+}
+
+/* Safe area for notched devices (matches FAQ) */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .contact-section .container,
+    .contact-hero-content {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
     }
 }

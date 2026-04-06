@@ -1,6 +1,6 @@
 # Glowstone Website
 
-Premium engineered quartz surfaces website for Glowstone Industries. 93% pure natural quartz, mineral-infused, anti-microbial certified.
+Premium engineered quartz surfaces website for Glowstone Industries. Mineral-infused, anti-microbial certified engineered quartz.
 
 ## Contents
 

@@ -35,8 +35,8 @@
 }
 
 .sh .bc {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.68rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(245, 240, 234, 0.28);
@@ -55,8 +55,8 @@
 }
 
 .sh h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.95rem, 6.25vw, 5.75rem);
     font-weight: 300;
     color: var(--os-cream);
     line-height: 1.05;
@@ -71,9 +71,9 @@
 }
 
 .sh p {
-    font-family: 'Jost', sans-serif;
-    font-size: clamp(0.85rem, 1.1vw, 0.96rem);
-    font-weight: 200;
+    font-family: var(--font-sans);
+    font-size: clamp(0.9rem, 1.2vw, 1.02rem);
+    font-weight: 300;
     color: rgba(245, 240, 234, 0.4);
     max-width: 500px;
     margin: 0 auto;
@@ -198,8 +198,8 @@
 }
 
 .r-year {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.55rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--os-gold);
@@ -208,7 +208,7 @@
 }
 
 .r-card-inner h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(1.2rem, 1.8vw, 1.65rem);
     font-weight: 300;
     color: var(--os-cream);
@@ -222,9 +222,9 @@
 }
 
 .r-card-inner p {
-    font-family: 'Jost', sans-serif;
-    font-size: clamp(0.75rem, 0.88vw, 0.86rem);
-    font-weight: 200;
+    font-family: var(--font-sans);
+    font-size: clamp(0.8125rem, 0.95vw, 0.92rem);
+    font-weight: 300;
     color: rgba(245, 240, 234, 0.55);
     line-height: 1.78;
     margin: 0;
@@ -237,8 +237,8 @@
     background: rgba(58, 170, 140, 0.1);
     border: 1px solid rgba(58, 170, 140, 0.3);
     padding: 0.18rem 0.6rem;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.52rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-micro);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--os-green);
@@ -253,8 +253,8 @@
 }
 
 .sc .lbl {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--os-gold);
@@ -264,7 +264,7 @@
 }
 
 .sc h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 300;
     color: var(--os-cream);
@@ -274,15 +274,18 @@
 
 .cg {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
     gap: 2px;
 }
 
 .ci {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(201, 168, 76, 0.08);
     padding: 2.2rem 1.2rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.4s;
     opacity: 0;
     transform: translateY(18px);
@@ -306,20 +309,28 @@
     transform: translateY(-4px);
 }
 
+/* 120px badge box — SMETA, Two Star Export PNG, etc. */
 .ci img {
-    width: 56px;
-    height: 56px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    margin-bottom: 0.9rem;
+    object-position: center;
+    margin: 0;
+    flex-shrink: 0;
     filter: brightness(0.85);
 }
 
-.ci span {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(245, 240, 234, 0.4);
+/* CE mark — keep full brightness on dark section */
+.ci img[src*="ce-logo.png"] {
+    filter: none;
+}
+
+.ci img[src*="smeta.png"] {
+    filter: none;
+}
+
+.ci img[src*="two-star-export.png"] {
+    filter: none;
 }
 
 /* Mobile timeline */
@@ -421,8 +432,8 @@
         padding: 1.75rem 1rem;
     }
     .ci img {
-        width: 48px;
-        height: 48px;
+        width: 88px;
+        height: 88px;
     }
 }
 

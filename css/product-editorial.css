@@ -1,0 +1,293 @@
+/**
+ * Pinterest / editorial-style product layout (sample page only)
+ * Scoped to body.product-editorial-page
+ */
+
+body.product-editorial-page {
+    background: #f0ebe4;
+    color: #2c2926;
+}
+
+body.product-editorial-page #main-content {
+    background: #f0ebe4;
+}
+
+/* Hero — full-bleed lifestyle (pin-style) */
+.pe-hero {
+    position: relative;
+    min-height: 88vh;
+    min-height: 88dvh;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.pe-hero-media {
+    position: absolute;
+    inset: 0;
+}
+
+.pe-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pe-hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(15, 12, 10, 0.82) 0%,
+        rgba(15, 12, 10, 0.25) 42%,
+        rgba(15, 12, 10, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+.pe-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3.5rem;
+    padding-bottom: max(3.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+.pe-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 252, 248, 0.75);
+    margin-bottom: 0.75rem;
+}
+
+.pe-hero h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(3.15rem, 10.5vw, 5.75rem);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--text-light);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.pe-hero-tagline {
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.1vw, 1.15rem);
+    font-weight: 300;
+    color: rgba(255, 252, 248, 0.88);
+    max-width: 28rem;
+    line-height: 1.55;
+    margin-top: 1.25rem;
+}
+
+/* Intro band */
+.pe-intro {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+}
+
+.pe-intro p {
+    font-family: var(--font-sans);
+    font-size: 1.02rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #4a4540;
+    margin: 0;
+}
+
+.pe-intro p + p {
+    margin-top: 1rem;
+}
+
+/* Pinterest-style masonry (column flow, pin-like cards) */
+.pe-board {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1rem 4rem;
+}
+
+.pe-board-label {
+    font-family: var(--font-sans);
+    font-size: var(--text-micro);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #8a847a;
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.pe-masonry {
+    column-count: 2;
+    column-gap: 0.85rem;
+}
+
+@media (min-width: 768px) {
+    .pe-masonry {
+        column-count: 3;
+        column-gap: 1rem;
+    }
+}
+
+.pe-pin {
+    break-inside: avoid;
+    margin-bottom: 0.85rem;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #e8e2d9;
+    box-shadow: 0 12px 40px rgba(44, 41, 38, 0.08);
+}
+
+@media (min-width: 768px) {
+    .pe-pin {
+        margin-bottom: 1rem;
+    }
+}
+
+.pe-pin img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+    transition: transform 0.65s ease;
+}
+
+.pe-pin:hover img {
+    transform: scale(1.02);
+}
+
+/* Detail row: slab + copy */
+.pe-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+    display: grid;
+    gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+    .pe-detail {
+        grid-template-columns: 1.05fr 1fr;
+        align-items: center;
+        gap: 3.5rem;
+    }
+}
+
+.pe-detail-figure {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(44, 41, 38, 0.12);
+    background: #ddd8d0;
+}
+
+.pe-detail-figure img {
+    width: 100%;
+    display: block;
+    vertical-align: middle;
+}
+
+.pe-detail-copy h2 {
+    font-family: var(--font-sans);
+    font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+    font-weight: 500;
+    color: #1f1c19;
+    margin-bottom: 1rem;
+}
+
+.pe-detail-copy p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.72;
+    color: #5c574f;
+    margin: 0 0 1rem;
+}
+
+.pe-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.pe-btn-primary {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 1.75rem;
+    background: #1f1c19;
+    color: #f5f0e8;
+    border: none;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.pe-btn-primary:hover {
+    background: #3d3833;
+    color: #f5f0e8;
+    transform: translateY(-1px);
+}
+
+.pe-btn-ghost {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 1.75rem;
+    background: transparent;
+    color: #1f1c19;
+    border: 1px solid rgba(31, 28, 25, 0.35);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.pe-btn-ghost:hover {
+    border-color: #1f1c19;
+    background: rgba(31, 28, 25, 0.04);
+    color: #1f1c19;
+}
+
+/* Sample ribbon */
+.pe-sample-note {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1rem 1.5rem 2rem;
+    color: #8a847a;
+}
+
+.pe-sample-note a {
+    color: #6b5c45;
+    font-weight: 500;
+}
+
+/* Minimal footer on sample page (main site footer is dark; match tone) */
+.pe-sample-footer {
+    background: #1a1816;
+    border-top: 1px solid rgba(201, 169, 98, 0.15);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+}
+
+.pe-sample-footer a {
+    color: rgba(245, 240, 232, 0.85);
+    text-decoration: none;
+}
+
+.pe-sample-footer a:hover {
+    color: var(--navbar-accent, #c9a962);
+    text-decoration: underline;
+}

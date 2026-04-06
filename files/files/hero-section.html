@@ -17,7 +17,8 @@
 
 <!-- ① PASTE THIS IN YOUR <head> -->
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap');
+/* Metropolis (SIL OFL) — same as site css/metropolis-fonts.css; path is relative to this file in files/files/ */
+@import url('../../css/metropolis-fonts.css');
 
 #gs-hero * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -86,11 +87,10 @@
 #gs-p0 { align-items: center;     justify-content: flex-end;  padding: 0 5vw 10vh; text-align: center; }
 #gs-p1 { align-items: flex-start; justify-content: center;    padding: 0 8vw; }
 #gs-p2 { align-items: flex-end;   justify-content: center;    padding: 0 8vw;       text-align: right; }
-#gs-p3 { align-items: center;     justify-content: center;    text-align: center; }
 
 .gs-eyebrow {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.65rem;
+  font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.72rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gs-gold);
@@ -109,7 +109,7 @@
 }
 
 .gs-panel h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: clamp(3rem, 6vw, 5.8rem);
   font-weight: 300;
   line-height: 1.07;
@@ -120,9 +120,9 @@
 .gs-panel h2 strong { font-weight: 600;   color: var(--gs-green); }
 
 .gs-desc {
-  font-family: 'Jost', sans-serif;
-  font-size: clamp(0.85rem, 1.1vw, 0.98rem);
-  font-weight: 200;
+  font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(0.95rem, 1.25vw, 1.06rem);
+  font-weight: 300;
   color: rgba(245,240,234,0.72);
   max-width: 400px;
   line-height: 1.9;
@@ -131,8 +131,8 @@
 #gs-p2 .gs-desc { margin-left: auto; }
 
 .gs-link {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.68rem;
+  font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.74rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gs-cream);
@@ -150,29 +150,6 @@
 }
 .gs-link:hover .gs-link-bar { width: 68px; }
 
-.gs-stats {
-  display: flex;
-  gap: 2.5rem;
-  margin-top: 0.4rem;
-}
-.gs-stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.1rem;
-  font-weight: 600;
-  color: var(--gs-gold);
-  display: block;
-  line-height: 1;
-}
-.gs-stat-lbl {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(245,240,234,0.4);
-  display: block;
-  margin-top: 3px;
-}
-
 /* Scroll hint — vanishes once scrolling starts */
 #gs-hint {
   position: absolute;
@@ -187,8 +164,8 @@
   transition: opacity 0.5s;
 }
 #gs-hint span {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.58rem;
+  font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.6875rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(245,240,234,0.38);
@@ -261,11 +238,6 @@
       <div class="gs-eyebrow">The Process</div>
       <h2>Pure<br><strong>Quartz</strong><br>Crystals</h2>
       <p class="gs-desc">Each granule sourced for purity, colour, and brilliance — before it ever becomes a slab.</p>
-      <div class="gs-stats">
-        <div><span class="gs-stat-num">93%</span><span class="gs-stat-lbl">Quartz Content</span></div>
-        <div><span class="gs-stat-num">50+</span><span class="gs-stat-lbl">Colour Ranges</span></div>
-        <div><span class="gs-stat-num">15yr</span><span class="gs-stat-lbl">Warranty</span></div>
-      </div>
     </div>
 
     <!-- Panel 2: Dust explosion — video 4s to 6s — scroll 53% to 77% -->
@@ -278,13 +250,7 @@
       </a>
     </div>
 
-    <!-- Panel 3: Logo reveal — video 6s to 8s — scroll 78% to 100% -->
-    <div class="gs-panel" id="gs-p3">
-      <div class="gs-eyebrow">GlowStone Quartz Surfaces</div>
-      <h2>Surfaces<br>That <em>Endure</em><br>Beautifully</h2>
-      <p class="gs-desc">Engineered for architects, designers and homeowners who never compromise on beauty.</p>
-      <a href="#" class="gs-link"><span class="gs-link-bar"></span>Explore the Range</a>
-    </div>
+    <!-- Logo reveal (final segment): video only — no text overlay -->
 
     <!-- Scroll nudge -->
     <div id="gs-hint">
@@ -308,8 +274,7 @@
   var panels = [
     document.getElementById('gs-p0'),
     document.getElementById('gs-p1'),
-    document.getElementById('gs-p2'),
-    document.getElementById('gs-p3')
+    document.getElementById('gs-p2')
   ];
 
   /*
@@ -320,14 +285,15 @@
       Panel 0 → hand touching quartz   → video 0s–2s
       Panel 1 → pouring powder         → video 2s–4s
       Panel 2 → dust explosion         → video 4s–6s
-      Panel 3 → logo on slab           → video 6s–8s
+      Final segment → logo on slab     → video 6s–8s (no overlay)
   */
   var ranges = [
     [0.00, 0.04, 0.21, 0.27],
     [0.26, 0.30, 0.48, 0.54],
-    [0.53, 0.57, 0.73, 0.78],
-    [0.77, 0.82, 0.97, 1.00]
+    [0.53, 0.57, 0.64, 0.72]
   ];
+  /* Scroll p maps linearly to video; last quarter = logo — hide all overlays */
+  var logoScrollStart = 0.75;
 
   function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
   function norm(v, a, b)    { return clamp((v - a) / (b - a), 0, 1); }
@@ -346,12 +312,15 @@
       }
     }
 
+    var hideHeroCopy = p >= logoScrollStart;
+
     /* Fade each panel in and out */
     for (var i = 0; i < panels.length; i++) {
       var r  = ranges[i];
       var fi = ease(norm(p, r[0], r[1]));   // fade in  0→1
       var fo = 1 - ease(norm(p, r[2], r[3])); // fade out 1→0
       var op = Math.min(fi, fo);
+      if (hideHeroCopy) op = 0;
 
       panels[i].style.opacity   = op;
       panels[i].style.transform = 'translateY(' + ((1 - op) * 18) + 'px)';

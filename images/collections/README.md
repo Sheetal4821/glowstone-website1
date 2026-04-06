@@ -10,11 +10,11 @@ images/collections/
 │   ├── trinity/
 │   ├── luminous-gold/
 │   └── nectar/
-├── pastel-series/         (add product folders here)
-├── plain-series/
-├── calacatta-series/
-├── budget-series/
-└── carrara-series/
+├── pastel-series/
+├── plain-series/         meraki, frost-white, glacier-white
+├── calacatta-series/     includes narina-grey, perla-venata (+ existing)
+├── budget-series/        black-starlight, brown-starlight, cream-mirror, crema, gracio, grey-starlight, grey-terrazo, halo, snowflake, walnut, white-starlight, white-terrazo
+└── carrara-series/        includes blaze (+ existing)
 ```
 
 **To add a new product:**

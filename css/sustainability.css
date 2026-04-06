@@ -11,251 +11,15 @@
 }
 
 /* Scroll offset */
+.tech-hero,
 #main-content,
-.sus-stats-section,
-.sus-commitments {
+.sus-stats-section {
     scroll-margin-top: clamp(70px, 10vw, 90px);
 }
 
-/* Progress bar */
-#sus-progress {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0%;
-    background: linear-gradient(90deg, var(--sus-green), var(--sus-gold));
-    z-index: 9999;
-    pointer-events: none;
-}
-
-/* Hero */
-#sus-hero {
-    position: relative;
-    height: 800vh;
-}
-
-#sus-pin {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    overflow: hidden;
-    background: #000;
-}
-
-#sus-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#sus-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-    background: linear-gradient(to bottom,
-        rgba(0, 0, 0, 0.38) 0%,
-        rgba(0, 20, 10, 0.05) 30%,
-        rgba(0, 20, 10, 0.05) 65%,
-        rgba(0, 0, 0, 0.6) 100%);
-}
-
-#sus-glow-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    z-index: 10;
-    background: linear-gradient(90deg, transparent, var(--sus-green), var(--sus-gold), var(--sus-green), transparent);
-    opacity: 0.7;
-    animation: susGlowPulse 3s ease-in-out infinite;
-}
-
-@keyframes susGlowPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.9; }
-}
-
-/* Panels */
-.sus-panel {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    will-change: opacity, transform;
-}
-
-#sus-p0 {
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 5vw 10vh;
-    text-align: center;
-}
-
-#sus-p1 {
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 8vw;
-}
-
-#sus-p2 {
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0 8vw;
-    text-align: right;
-}
-
-.sus-eyebrow {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--sus-green);
-    font-weight: 300;
-    margin-bottom: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-}
-
-.sus-eyebrow::before,
-.sus-eyebrow::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--sus-green);
-    opacity: 0.6;
-}
-
-#sus-p2 .sus-eyebrow {
-    flex-direction: row-reverse;
-}
-
-.sus-panel h2,
-.sus-panel-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 6vw, 5.8rem);
-    font-weight: 300;
-    line-height: 1.07;
-    color: var(--sus-cream);
-    margin-bottom: 1.2rem;
-}
-
-.sus-panel h2 em,
-.sus-panel-title em {
-    font-style: italic;
-    color: var(--sus-green);
-    font-weight: 300;
-}
-
-.sus-panel h2 strong,
-.sus-panel-title strong {
-    font-weight: 600;
-    color: var(--sus-gold);
-}
-
-.sus-desc {
-    font-family: 'Jost', sans-serif;
-    font-size: clamp(0.85rem, 1.1vw, 0.98rem);
-    font-weight: 200;
-    color: rgba(245, 240, 234, 0.72);
-    max-width: 420px;
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
-}
-
-#sus-p2 .sus-desc {
-    margin-left: auto;
-}
-
-.sus-link {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sus-cream);
-    text-decoration: none;
-    font-weight: 300;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.9rem;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-}
-
-.sus-link-bar {
-    display: block;
-    width: 44px;
-    height: 1px;
-    background: var(--sus-green);
-    transition: width 0.35s ease;
-}
-
-.sus-link:hover .sus-link-bar {
-    width: 68px;
-}
-
-.sus-link-right {
-    justify-content: flex-end;
-}
-
-.sus-link-right .sus-link-bar {
-    transform-origin: right;
-}
-
-#sus-hint {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.5s;
-}
-
-#sus-hint span {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(245, 240, 234, 0.38);
-}
-
-.sus-mouse {
-    width: 19px;
-    height: 30px;
-    border: 1px solid rgba(58, 170, 140, 0.3);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    padding-top: 5px;
-}
-
-.sus-dot {
-    width: 2px;
-    height: 5px;
-    background: var(--sus-green);
-    border-radius: 2px;
-    animation: susDot 1.8s ease-in-out infinite;
-}
-
-@keyframes susDot {
-    0% { transform: translateY(0); opacity: 1; }
-    70% { transform: translateY(9px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 0; }
+/* Hero — own imagery (Technical Specification uses tech-spec.css for its hero) */
+.tech-hero-bg {
+    background-image: url('../images/ba22ab24d295ff31bac42ad4c3998105.jpg');
 }
 
 /* Stats section - content-focused cards */
@@ -284,7 +48,7 @@
 }
 
 .sus-stat-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(235, 228, 216, 0.03);
     border: 1px solid rgba(58, 170, 140, 0.1);
     padding: 2rem 1.75rem;
     text-align: center;
@@ -320,16 +84,16 @@
     display: block;
 }
 
-.sus-stat-card h4 {
-    font-family: 'Cormorant Garamond', serif;
+.sus-stat-card h3 {
+    font-family: var(--font-sans);
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--sus-cream);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
 }
 
 .sus-stat-card p {
-    font-family: 'Jost', sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.8rem;
     font-weight: 200;
     color: rgba(245, 240, 234, 0.6);
@@ -337,19 +101,17 @@
     margin: 0;
 }
 
-/* Commitment cards */
-.sus-commitments {
-    background: #0a0e0c;
-    padding: 80px 0;
-}
-
-.sus-commitments-header {
-    margin-bottom: 3rem;
+/* Section heading (shared with former commitments block) */
+.sus-stats-section .sus-commitments-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .sus-sec-label {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--sus-green);
@@ -358,10 +120,11 @@
 }
 
 .sus-sec-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-family: var(--font-sans);
+    font-size: clamp(2.15rem, 3.75vw, 3.2rem);
     font-weight: 300;
     color: var(--sus-cream);
+    margin: 0;
 }
 
 .sus-sec-title em {
@@ -369,163 +132,30 @@
     color: var(--sus-gold);
 }
 
-.sus-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-}
-
-.sus-card {
-    background: #0f1410;
-    padding: 2rem;
-    border-left: 3px solid transparent;
-    transition: border-color 0.5s, background 0.5s, transform 0.6s, opacity 0.6s;
-    opacity: 0;
-    transform: translateY(30px);
-    -webkit-tap-highlight-color: transparent;
-}
-
-.sus-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.sus-card:hover {
-    border-left-color: var(--sus-green);
-    background: #111a14;
-}
-
-.sus-card-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 1.2rem;
-    position: relative;
-}
-
-.sus-card-icon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 1px solid rgba(58, 170, 140, 0.3);
-    border-radius: 50%;
-    animation: susIconPing 3s ease-in-out infinite;
-}
-
-@keyframes susIconPing {
-    0%, 100% { transform: scale(1); opacity: 0.3; }
-    50% { transform: scale(1.4); opacity: 0; }
-}
-
-.sus-card-icon svg {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.sus-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--sus-cream);
-    margin-bottom: 0.6rem;
-}
-
-.sus-card p {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 200;
-    color: rgba(245, 240, 234, 0.6);
-    line-height: 1.8;
-    margin: 0;
-}
-
 /* Responsive */
-@media (max-width: 1199px) {
-    .sus-panel h2 {
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
-    }
-}
-
 @media (max-width: 991px) {
-    #sus-p1,
-    #sus-p2 {
-        padding: 0 5vw;
-    }
-    .sus-panel h2 {
-        font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-    }
     .sus-stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .sus-stats-section,
-    .sus-commitments {
+    .sus-stats-section {
         padding: 60px 0;
     }
 }
 
 @media (max-width: 767px) {
-    #sus-hero {
-        height: 350vh;
-    }
-    #sus-p0,
-    #sus-p1,
-    #sus-p2 {
-        align-items: flex-start;
-        justify-content: flex-end;
-        padding: 0 5vw 5vh;
-        text-align: left;
-    }
-    .sus-panel h2 {
-        font-size: clamp(1.8rem, 5.5vw, 2.5rem);
-    }
-    .sus-eyebrow {
-        font-size: 0.58rem;
-    }
-    .sus-desc {
-        font-size: 0.83rem;
-        max-width: 100%;
-    }
-    #sus-p2 .sus-desc {
-        margin-left: 0;
-    }
-    #sus-p2 .sus-eyebrow {
-        flex-direction: row;
-    }
-    #sus-p2 .sus-link {
-        flex-direction: row;
-    }
     .sus-stats-grid {
         grid-template-columns: 1fr;
     }
-    .sus-stats-section,
-    .sus-commitments {
+    .sus-stats-section {
         padding: 40px 0;
-    }
-    .sus-card {
-        padding: 1.75rem;
     }
 }
 
 @media (max-width: 480px) {
-    #sus-hero {
-        height: 300vh;
-    }
-    .sus-panel h2 {
-        font-size: 1.65rem;
-    }
-    .sus-eyebrow {
-        font-size: 0.55rem;
-    }
-    .sus-desc {
-        font-size: 0.79rem;
-    }
     .sus-stat-card {
         padding: 1.5rem 1.25rem;
     }
-    .sus-stat-card h4 {
+    .sus-stat-card h3 {
         font-size: 1.1rem;
     }
     .sus-stat-card p {
@@ -533,30 +163,9 @@
     }
 }
 
-@media (max-width: 360px) {
-    .sus-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    .sus-card {
-        padding: 1.5rem;
-    }
-}
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    .sus-panel,
-    .sus-link-bar,
-    #sus-hint,
-    .sus-stat-card,
-    .sus-card {
+    .sus-stat-card {
         transition: none;
-    }
-    #sus-glow-line,
-    .sus-dot,
-    .sus-card-icon::before {
-        animation: none;
-    }
-    .sus-dot {
-        opacity: 0.6;
     }
 }

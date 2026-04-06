@@ -13,17 +13,16 @@
     <meta property="og:description" content="Solar power, zero water discharge, electric vehicles. Eco-friendly quartz manufacturing in Rajasthan, India.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.glowstone.co.in/sustainability.html">
-    <meta property="og:image" content="https://www.glowstone.co.in/images/hero-2.jpg">
+    <meta property="og:image" content="https://www.glowstone.co.in/images/ba22ab24d295ff31bac42ad4c3998105.jpg">
     <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sustainability | Glowstone - Glowing Green">
     <meta name="twitter:description" content="Solar power, zero water discharge, electric vehicles. Eco-friendly quartz manufacturing.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/metropolis-fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/tech-spec.css">
     <link rel="stylesheet" href="css/sustainability.css">
     <script type="application/ld+json">
     {
@@ -42,7 +41,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Main navigation">
     <div class="container">
         <a class="navbar-brand" href="index.html#home">
-            <img src="logo-2.avif" alt="Glowstone - Premium Quartz Surfaces" class="navbar-logo" width="120" height="45">
+            <img src="logo-2.avif" alt="Glowstone - Premium Quartz Surfaces" class="navbar-logo" width="144" height="54">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,16 +55,9 @@
                         <li><a class="dropdown-item" href="about.html">About Us</a></li>
                         <li><a class="dropdown-item active" href="sustainability.html">Sustainability</a></li>
                         <li><a class="dropdown-item" href="our-story.html">Our Story</a></li>
-                        <li><a class="dropdown-item" href="projects.html">Projects</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="index.html#collection" data-bs-toggle="dropdown" aria-expanded="false">Collection</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="collection-domestic.html">Domestic Collection</a></li>
-                        <li><a class="dropdown-item" href="collection-international.html">International Collection</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="collection-domestic.html">Collection</a></li>
                 <li class="nav-item"><a class="nav-link" href="care-maintenance.html">Care &amp; Maintenance</a></li>
                 <li class="nav-item"><a class="nav-link" href="technical-specification.html">Technical Specification</a></li>
                 <li class="nav-item"><a class="nav-link" href="installation.html">Installation</a></li>
@@ -77,124 +69,51 @@
     </div>
 </nav>
 
-<div id="sus-progress"></div>
-
-<!-- Hero -->
-<header role="banner" aria-label="Sustainability Hero">
-  <div id="sus-hero">
-    <div id="sus-pin">
-      <video id="sus-video" muted playsinline preload="metadata" webkit-playsinline aria-label="Glowstone sustainability - solar, electric vehicles, water recycling">
-        <source src="video/sustainability-optimized.mp4" type="video/mp4">
-      </video>
-      <div id="sus-overlay"></div>
-      <div id="sus-glow-line"></div>
-
-      <div class="sus-panel" id="sus-p0">
-        <div class="sus-eyebrow">Solar Powered</div>
-        <h1 class="sus-panel-title">Glowing<br><em>Green</em></h1>
-        <p class="sus-desc">Our factory is powered by solar panels — reducing our carbon footprint and our dependence on the grid, one panel at a time. We are expanding our clean energy capacity to meet growing demand.</p>
-      </div>
-
-      <div class="sus-panel" id="sus-p1">
-        <div class="sus-eyebrow">Electric Operations</div>
-        <h2 class="sus-panel-title">Zero<br><strong>Emissions</strong><br>Inside</h2>
-        <p class="sus-desc">Every forklift in our factory runs on electricity — not gas. LED lighting has cut our electricity consumption significantly, making our operations more efficient and sustainable.</p>
-      </div>
-
-      <div class="sus-panel" id="sus-p2">
-        <div class="sus-eyebrow">Zero Water Discharge</div>
-        <h2 class="sus-panel-title">Nothing<br><em>Wasted</em></h2>
-        <p class="sus-desc">Our water recycling facility ensures every drop is reused. Every drop is recycled — and our slurry is repurposed into bricks and construction materials, achieving zero waste.</p>
-        <a href="about.html" class="sus-link sus-link-right">Our Full Story<span class="sus-link-bar"></span></a>
-      </div>
-
-      <div id="sus-hint" aria-hidden="true">
-        <div class="sus-mouse"><div class="sus-dot"></div></div>
-        <span>Scroll to explore</span>
-      </div>
+<!-- Hero (same pattern as Technical Specification) -->
+<header class="tech-hero" role="banner" aria-label="Sustainability">
+    <div class="tech-hero-bg" aria-hidden="true"></div>
+    <div class="tech-hero-content">
+        <nav class="tech-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span aria-hidden="true"> / </span>
+            <span>About</span>
+            <span aria-hidden="true"> / </span>
+            <span>Sustainability</span>
+        </nav>
+        <h1>Sustainability</h1>
     </div>
-  </div>
 </header>
 
-<main id="main-content">
+<main id="main-content" role="main">
 
-<!-- Sustainability pillars -->
-<section class="sus-stats-section" aria-label="Sustainability pillars">
-  <div class="container">
-    <div class="sus-stats-grid">
-      <div class="sus-stat-card" data-delay="0">
-        <span class="sus-stat-icon" aria-hidden="true">☀️</span>
-        <h4>Solar Power</h4>
-        <p>Our factory relies on solar panels for a significant portion of electricity, with plans to expand capacity. We are reducing our carbon footprint and dependence on the grid.</p>
-      </div>
-      <div class="sus-stat-card" data-delay="100">
-        <span class="sus-stat-icon" aria-hidden="true">💡</span>
-        <h4>Energy Efficiency</h4>
-        <p>We have replaced all conventional lighting with LEDs across the factory, achieving a major reduction in electricity consumption for lighting.</p>
-      </div>
-      <div class="sus-stat-card" data-delay="200">
-        <span class="sus-stat-icon" aria-hidden="true">💧</span>
-        <h4>Zero Water Discharge</h4>
-        <p>Our water recycling facility and reservoir ensure we achieve zero discharge. Every drop is recycled and slurry is repurposed into construction materials.</p>
-      </div>
-      <div class="sus-stat-card" data-delay="300">
-        <span class="sus-stat-icon" aria-hidden="true">🌿</span>
-        <h4>Local Sourcing</h4>
-        <p>We source raw materials from quarries in Rajasthan, significantly reducing transport emissions compared to imported alternatives.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ COMMITMENT CARDS ══ -->
-<section class="sus-commitments" aria-labelledby="sus-commit-heading">
+<!-- Sustainability pillars (single section — emoji cards) -->
+<section class="sus-stats-section" aria-labelledby="sus-commit-heading">
   <div class="container">
     <div class="sus-commitments-header animate-on-scroll">
       <span class="sus-sec-label">Our Commitment</span>
       <h2 class="sus-sec-title" id="sus-commit-heading">Sustainability at <em>Glowstone</em></h2>
     </div>
-    <div class="sus-cards-grid">
-
-      <div class="sus-card" data-delay="0">
-        <div class="sus-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa8c" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </div>
+    <div class="sus-stats-grid">
+      <div class="sus-stat-card" data-delay="0">
+        <span class="sus-stat-icon" aria-hidden="true">☀️</span>
         <h3>Solar Power</h3>
-        <p>Our factory relies on solar power for a significant portion of electricity, rising in summer. We are expanding our clean energy capacity to meet growing demand and reduce our carbon footprint.</p>
+        <p>Our factory relies on solar panels for a significant portion of electricity, with plans to expand capacity. We are reducing our carbon footprint and dependence on the grid.</p>
       </div>
-
-      <div class="sus-card" data-delay="100">
-        <div class="sus-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa8c" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
+      <div class="sus-stat-card" data-delay="100">
+        <span class="sus-stat-icon" aria-hidden="true">💡</span>
         <h3>Energy Efficiency</h3>
-        <p>We have replaced all conventional bulbs and tubelights with LEDs throughout the factory, achieving a major reduction in electricity consumption for lighting.</p>
+        <p>We have replaced all conventional lighting with LEDs across the factory, achieving a major reduction in electricity consumption for lighting.</p>
       </div>
-
-      <div class="sus-card" data-delay="200">
-        <div class="sus-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa8c" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <h3>Electric Vehicles</h3>
-        <p>We operate electric forklifts throughout our factory, prioritising zero-emission electric vehicles over gas-powered alternatives for all internal material handling.</p>
-      </div>
-
-      <div class="sus-card" data-delay="300">
-        <div class="sus-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa8c" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
+      <div class="sus-stat-card" data-delay="200">
+        <span class="sus-stat-icon" aria-hidden="true">💧</span>
         <h3>Zero Water Discharge</h3>
-        <p>Our water recycling facility and reservoir ensure we achieve zero discharge. Slurry from the recycling process is repurposed in brickmaking and construction.</p>
+        <p>Our water recycling facility and reservoir ensure we achieve zero discharge. Every drop is recycled and slurry is repurposed into construction materials.</p>
       </div>
-
-      <div class="sus-card" data-delay="400">
-        <div class="sus-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3aaa8c" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
+      <div class="sus-stat-card" data-delay="300">
+        <span class="sus-stat-icon" aria-hidden="true">🌿</span>
         <h3>Local Sourcing</h3>
-        <p>We source raw materials from quarries in Rajasthan, significantly reducing our carbon footprint compared to imported alternatives.</p>
+        <p>We source raw materials from quarries in Rajasthan, significantly reducing transport emissions compared to imported alternatives.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -218,13 +137,20 @@
                             <a href="index.html#home" class="footer-logo"><img src="logo-2.avif" alt="Glowstone - Premium Quartz Surfaces" width="100" height="42" loading="lazy"></a>
                             <p class="footer-tagline">Recreating Dreams That Last</p>
                             <div class="footer-socials">
-                                <a href="https://www.instagram.com/glowstone.co.in?igsh=NGdrYmdxMDhubzk0" target="_blank" rel="noopener" class="footer-social" aria-label="Follow us on Instagram"><img src="images/social/instagram.svg" alt="Instagram" class="footer-social-icon" width="18" height="18" loading="lazy"></a>
-                                <a href="https://www.linkedin.com/company/glowstone" target="_blank" rel="noopener" class="footer-social" aria-label="Follow us on LinkedIn"><img src="images/brand-inlogo-hero-fg-dsk-v01-2x.png" alt="LinkedIn" class="footer-social-icon" width="18" height="18" loading="lazy"></a>
+                                <a href="https://www.instagram.com/glowstone_quartz?igsh=NGdrYmdxMDhubzk0" target="_blank" rel="noopener" class="footer-social" aria-label="Follow us on Instagram"><img src="images/social/instagram.svg" alt="Instagram" class="footer-social-icon" width="18" height="18" loading="lazy"></a>
+                                <a href="https://www.linkedin.com/company/glowstone-industries-private-limited/" target="_blank" rel="noopener" class="footer-social" aria-label="Follow us on LinkedIn"><img src="images/social/linkedin.png" alt="LinkedIn" class="footer-social-icon" width="18" height="18" loading="lazy"></a>
                             </div>
                         </div>
                         <div class="footer-links">
                             <div class="footer-col"><h4>Our Collection</h4><ul><li><a href="collection-domestic.html">Domestic Collection</a></li><li><a href="collection-international.html">International Collection</a></li></ul></div>
-                            <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="our-story.html">Our Story</a></li><li><a href="projects.html">Projects</a></li></ul></div>
+                                                        <div class="footer-col">
+                                <h4>Brochures</h4>
+                                <ul>
+                                    <li><a href="files/brochures/glowstone-domestic-collection.pdf" download>Download Domestic Collection Brochure</a></li>
+                                    <li><a href="files/brochures/glowstone-international-collection.pdf" download>Download International Collection Brochure</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="sustainability.html">Sustainability</a></li><li><a href="our-story.html">Our Story</a></li></ul></div>
                             <div class="footer-col"><h4>Support</h4><ul><li><a href="care-maintenance.html">Care &amp; Maintenance</a></li><li><a href="technical-specification.html">Technical Specification</a></li><li><a href="installation.html">Installation</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#visualizer">Visualizer</a></li></ul></div>
                             <div class="footer-col"><h4>Contact</h4><ul><li><a href="contact.html">Contact Us</a></li><li><a href="tel:+918306996722">+91-8306996722</a></li><li><a href="mailto:sales@glowstone.co.in">sales@glowstone.co.in</a></li></ul></div>
                             <div class="footer-col"><h4>Visit Us</h4><ul><li>Office: J-11, Azad Nagar, Bhilwara - 311001</li><li>Factory: Village Baran, Banera, Bhilwara - 311401</li></ul></div>
@@ -242,82 +168,21 @@
 
 <script>
 (function(){
-  var hero = document.getElementById('sus-hero');
-  var video = document.getElementById('sus-video');
-  var hint = document.getElementById('sus-hint');
-  var bar = document.getElementById('sus-progress');
-  var panels = [document.getElementById('sus-p0'), document.getElementById('sus-p1'), document.getElementById('sus-p2')];
-  var ranges = [[0.00, 0.04, 0.24, 0.30], [0.30, 0.34, 0.56, 0.62], [0.62, 0.66, 0.94, 1.00]];
-
-  function clamp(v,a,b){ return v<a?a:v>b?b:v; }
-  function norm(v,a,b){ return clamp((v-a)/(b-a),0,1); }
-  function ease(t){ return t*t*(3-2*t); }
-
-  function update(){
-    var scrolled = -hero.getBoundingClientRect().top;
-    var total = hero.offsetHeight - window.innerHeight;
-    var p = total > 0 ? clamp(scrolled/total,0,1) : 0;
-    if(video.duration && isFinite(video.duration)){
-      var target = p * video.duration;
-      if(Math.abs(video.currentTime - target) > 0.016) video.currentTime = target;
-    }
-    for(var i=0;i<3;i++){
-      var r=ranges[i], op=Math.min(ease(norm(p,r[0],r[1])),1-ease(norm(p,r[2],r[3])));
-      panels[i].style.opacity=op;
-      panels[i].style.transform='translateY('+((1-op)*18)+'px)';
-    }
-    hint.style.opacity = p<0.02?'1':'0';
-    bar.style.width = (p*100)+'%';
-  }
-
-  if(window.innerWidth <= 767){
-    video.setAttribute('autoplay','');
-    video.setAttribute('loop','');
-    video.play().catch(function(){});
-    panels[0].style.opacity='1';
-    panels[0].style.transform='translateY(0)';
-    var ticking=false;
-    function onScroll(){ if(!ticking){ requestAnimationFrame(function(){ update(); ticking=false; }); ticking=true; } }
-    window.addEventListener('scroll',onScroll,{passive:true});
-    update();
-    initStatsAndCards();
-    return;
-  }
-
-  function init(){
-    video.currentTime = 0.001;
-    var ticking=false;
-    function onScroll(){ if(!ticking){ requestAnimationFrame(function(){ update(); ticking=false; }); ticking=true; } }
-    window.addEventListener('scroll',onScroll,{passive:true});
-    update();
-    initStatsAndCards();
-  }
-  if(video.readyState >= 1) init();
-  else video.addEventListener('loadedmetadata', init);
-
-  function initStatsAndCards(){
+  function initStatCards(){
     var statCards = document.querySelectorAll('.sus-stat-card');
+    var section = document.querySelector('.sus-stats-section');
+    if (!section || !statCards.length) return;
     var statsObs = new IntersectionObserver(function(entries){
       if(!entries[0].isIntersecting) return;
       statCards.forEach(function(card){
-        var delay = parseInt(card.dataset.delay)||0;
+        var delay = parseInt(card.dataset.delay, 10) || 0;
         setTimeout(function(){ card.classList.add('in-view'); }, delay);
       });
       statsObs.disconnect();
     },{threshold:0.2});
-    statsObs.observe(document.querySelector('.sus-stats-section'));
-
-    var cards = document.querySelectorAll('.sus-card');
-    var cardObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(!entry.isIntersecting) return;
-        var delay = parseInt(entry.target.dataset.delay)||0;
-        setTimeout(function(){ entry.target.classList.add('visible'); }, delay);
-        cardObs.unobserve(entry.target);
-      });
-    },{threshold:0.15});
-    cards.forEach(function(c){ cardObs.observe(c); });
+    statsObs.observe(section);
   }
+  initStatCards();
 })();
 </script>
 </body>
